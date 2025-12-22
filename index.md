@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+This blog will be a realm for me share my interesting life
 
-Maybe say a some things about yourself.
+I know that you do care a lot about my life, but more seriously we will talk about reverse engineering, malware, hunting...
 
-Or maybe what you plan to blog about.
+All the fun Stuffs :smile:

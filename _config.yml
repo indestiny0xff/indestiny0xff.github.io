@@ -4,10 +4,11 @@ description: "They may be content on this blog if the author isn't lazy to work 
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
-email: "letmethinkaboutit@lmtai.com"
+#email: "letmethinkaboutit@lmtai.com"
 twitter_username: "indestiny_cti"
 github_username: "indestiny0xff"
-linkedin_username: "letmethinkaboutit"
+matodon_username:  "@indestiny0xff@infosec.exchange
+#linkedin_username: "letmethinkaboutit"
 #facebook_username: username
 #flickr_username: username
 #instagram_username: username

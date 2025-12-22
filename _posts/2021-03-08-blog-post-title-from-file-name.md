@@ -32,3 +32,4 @@ ForEach ($thing in $things) {
 ```
 
 😙
+![]()<img width="625" height="283" alt="image" src="https://github.com/user-attachments/assets/c28daf7e-cad6-46f9-ad06-4db8003294ab" />

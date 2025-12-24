@@ -11,6 +11,18 @@ I will pinpoint in this section all the documentations that have been used to wr
 --- 
 
 ## Topics Ideas :  
-- [ ] [BPH](https://info.silentpush.com/hubfs/SP-WP-bulletproof-hosting.pdf?utm_campaign=31865988-asset-bph-whitepaper-q4fy25&utm_source=website&utm_medium=post)
-  - (Retrieve DROP from shse, monitor any change in DNS record )
-- [ ] [Novel Pe injection in loader](https://research.checkpoint.com/2025/gachiloader-node-js-malware-with-api-tracing/)
+-  Tracking infrastructure : [BPH](https://info.silentpush.com/hubfs/SP-WP-bulletproof-hosting.pdf?utm_campaign=31865988-asset-bph-whitepaper-q4fy25&utm_source=website&utm_medium=post)
+  - [ ] Retrieve DROP from shse, monitor any change in DNS record 
+  - [ ] MatchDiscovered ASNs with hurricane electric database to see if they any peering partner ?
+  - [ ] Look for indicator for BPH : Crescendo (Whois DNS ASN Organisations records, patterns in domains/ structure of the hosted pages (find a common skeleton ?), pattern on contents (what can be matched and what is impratical for our use cases)
+  - [ ] Test for various kinds of tools (also creating somes) (for the tests: take a random bph range of ip)
+
+-  Detection / threat hunting : Oneshot honeypotlab
+  - [ ] Write a oneshot script for the deployement of the lab (Ansible, bash ? ...)
+  - [ ] Incorporate at least 3 types of motors : Suricata, yara, sigma
+  - [ ] Find the best cost effective infra
+
+-  Reverse engineering and Malware Analysis : [Rust for maldev](https://github.com/indestiny0xff/Rust-for-Malware-Development/tree/main) , [All hasherezade  repo](https://github.com/hasherezade)
+  - [ ] Writeup about Struppigel courses ? MAOS books?
+  - [ ] Create a repo with several languages : Language_name - malware types - malware variant - malware techniques.
+  - [ ] Developping tools to automate manuals tasks (Go/Rust/Python)

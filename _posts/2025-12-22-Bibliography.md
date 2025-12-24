@@ -25,7 +25,7 @@ I will pinpoint in this section all the documentations that have been used to wr
   - [ ] Incorporate at least 3 types of motors : Suricata, yara, sigma
   - [ ] Find the best cost effective infra
 
--  Reverse engineering and Malware Analysis : [Rust for maldev](https://github.com/indestiny0xff/Rust-for-Malware-Development/tree/main) , [All hasherezade  repo](https://github.com/hasherezade)
+-  Reverse engineering and Malware Analysis : [Rust for maldev](https://github.com/indestiny0xff/Rust-for-Malware-Development/tree/main) , [Hasherezade  repo](https://github.com/hasherezade)
   - [ ] Writeup about Struppigel courses ? MAOS books?
   - [ ] Create a repo with several languages : Language_name - malware types - malware variant - malware techniques.
   - [ ] Developping tools to automate manuals tasks (Go/Rust/Python)

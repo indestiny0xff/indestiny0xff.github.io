@@ -10,7 +10,7 @@ I will pinpoint in this section all the documentations that have been used to wr
 
 --- 
 
-## What i could write about :  
+## Topics Ideas :  
 - [ ] [BPH](https://info.silentpush.com/hubfs/SP-WP-bulletproof-hosting.pdf?utm_campaign=31865988-asset-bph-whitepaper-q4fy25&utm_source=website&utm_medium=post)
   - (Retrieve DROP from shse, monitor any change in DNS record )
 - [ ] [Novel Pe injection in loader](https://research.checkpoint.com/2025/gachiloader-node-js-malware-with-api-tracing/)

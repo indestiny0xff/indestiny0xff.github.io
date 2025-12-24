@@ -13,7 +13,7 @@ I will pinpoint in this section all the documentations that have been used to wr
 ## Topics Ideas :  
 -  Tracking infrastructure : [BPH](https://info.silentpush.com/hubfs/SP-WP-bulletproof-hosting.pdf?utm_campaign=31865988-asset-bph-whitepaper-q4fy25&utm_source=website&utm_medium=post)
   - [ ] Retrieve DROP from shse, monitor any change in DNS record 
-  - [ ] MatchDiscovered ASNs with hurricane electric database to see if they any peering partner ?
+  - [ ] Match Discovered ASNs with hurricane electric database to see if they any peering partner ?
   - [ ] Look for indicator for BPH : Crescendo (Whois DNS ASN Organisations records, patterns in domains/ structure of the hosted pages (find a common skeleton ?), pattern on contents (what can be matched and what is impratical for our use cases)
   - [ ] Test for various kinds of tools (also creating somes) (for the tests: take a random bph range of ip)
 

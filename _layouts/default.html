@@ -39,13 +39,20 @@
       <a class="nav-logo" href="{{ '/' | relative_url }}">othmaneb<span class="p">@cti</span>:~$</a>
       <button class="nav-burger" id="navBurger" aria-label="Menu">☰</button>
       <div class="nav-links" id="navLinks">
-        <a href="{{ '/' | relative_url }}#about"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
-        <a href="{{ '/' | relative_url }}#huntingbadguys">HuntingBadGuys</a>
-        <a href="{{ '/' | relative_url }}#experience"><span class="lang-en">Experience</span><span class="lang-fr">Expérience</span></a>
-        <a href="{{ '/' | relative_url }}#projects"><span class="lang-en">Projects</span><span class="lang-fr">Projets</span></a>
-        <a href="{{ '/' | relative_url }}#skills"><span class="lang-en">Skills</span><span class="lang-fr">Compétences</span></a>
-        <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}class="active"{% endif %}>Blog</a>
-        <a href="{{ '/' | relative_url }}#contact">Contact</a>
+        <div class="nav-item">
+          <a class="nav-top{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Portfolio <span class="chev">▾</span></a>
+          <div class="drop">
+            <a href="{{ '/' | relative_url }}#about"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+            <a href="{{ '/' | relative_url }}#huntingbadguys">HuntingBadGuys</a>
+            <a href="{{ '/' | relative_url }}#experience"><span class="lang-en">Experience</span><span class="lang-fr">Expérience</span></a>
+            <a href="{{ '/' | relative_url }}#projects"><span class="lang-en">Projects</span><span class="lang-fr">Projets</span></a>
+            <a href="{{ '/' | relative_url }}#skills"><span class="lang-en">Skills</span><span class="lang-fr">Compétences</span></a>
+            <a href="{{ '/' | relative_url }}#education"><span class="lang-en">Education</span><span class="lang-fr">Formation</span></a>
+            <a href="{{ '/' | relative_url }}#publications">Publications</a>
+            <a href="{{ '/' | relative_url }}#contact">Contact</a>
+          </div>
+        </div>
+        <a class="nav-top{% if page.url contains '/blog' or page.layout == 'post' %} active{% endif %}" href="{{ '/blog/' | relative_url }}">Blog</a>
       </div>
       <div class="nav-ctrl">
         <div class="lang-switch" role="group" aria-label="Language">

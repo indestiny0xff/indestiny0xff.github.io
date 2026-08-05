@@ -11,26 +11,35 @@ Bilingual (EN/FR) portfolio + research blog hosted on **GitHub Pages** (Jekyll, 
 
 Never introduce any of the following anywhere on the site:
 
-- **Full last name** — use only "othmaneb" / "Othmane B."
-- **Phone number** — never.
-- **Personal email** — the ONLY contact email allowed is `ada.moonstone746@passmail.com`.
-- **LinkedIn profile / article URLs** — they contain the full name in the slug. Do not link them.
-- **Photos** — none.
+- **Full last name in site text**: use only "othmaneb" / "Othmane B."
+- **Phone number**: never.
+- **Personal email**: the ONLY contact email allowed is `ada.moonstone746@passmail.com`.
+- **Photos**: none.
 - CV PDFs must never be committed to this repo.
 
-Public handles that ARE allowed: GitHub `indestiny0xff`, X/Twitter `indestiny_cti`, `huntingbadguys.online`.
+Public handles that ARE allowed: GitHub `indestiny0xff`, X/Twitter `indestiny_cti`, `huntingbadguys.online`. The two LinkedIn ARTICLE links in the Publications section were explicitly provided by the owner and are allowed (the slugs contain the full name, which the owner accepted); the LinkedIn PROFILE URL stays excluded.
+
+## Writing style rules (owner preference)
+
+- Never use em dashes ("—") or en dashes in prose. Use commas, colons or separate sentences instead ("·" separators in chips/labels are fine).
+- Write complete, professional sentences in both languages. Avoid fragments in body copy.
 
 ## Architecture
 
 ```
 _config.yml            — Jekyll config (no theme; jekyll-feed, jekyll-sitemap, jemoji)
-_layouts/default.html  — shell: nav, EN/FR switch, dark/light toggle, footer
+_layouts/default.html  — shell: nav, EN/FR switch, dark/light toggle, footer, favicon links
 _layouts/post.html     — blog article (loads local highlight.js: powershell, plaintext, tsql)
-index.html             — the whole portfolio one-pager (bilingual)
+index.html             — the whole portfolio one-pager (bilingual), incl. the interactive scan console
 blog/index.html        — post list
 404.html               — themed 404
-assets/css/main.css    — entire design system
-assets/js/main.js      — theme/lang persistence (localStorage), mobile nav, reveal-on-scroll, hero terminal typing
+assets/css/main.css    — entire design system (incl. .console demo styles)
+assets/js/main.js      — theme/lang persistence (localStorage), mobile nav, reveal-on-scroll,
+                         hero terminal typing, and the simulated HBG scan console (#hbgConsole,
+                         SCENARIOS data: phish/ransom/c2/generic; all data synthetic, IPs from
+                         RFC 5737 doc ranges, fictional .onion)
+assets/favicon.svg     — crosshair favicon (purple ring, cyan dot); favicon.ico is the multi-size
+                         raster version generated with PIL (regenerate both together if changed)
 _posts/                — blog posts (markdown, front matter: layout post, title, tags)
 js/highlightjs/        — vendored highlight.js core + 3 language packs
 ```

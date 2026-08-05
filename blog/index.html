@@ -1,0 +1,41 @@
+---
+layout: default
+title: Blog
+description: "Research blog — reverse engineering, malware analysis, threat hunting and infrastructure tracking write-ups."
+---
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="eyebrow"><span class="lang-en">Research blog</span><span class="lang-fr">Blog de recherche</span></div>
+    <h1><span class="lang-en">Reverse Engineering<br>for Fun &amp; Profit</span><span class="lang-fr">Reverse Engineering<br>for Fun &amp; Profit</span></h1>
+    <p>
+      <span class="lang-en">Write-ups on reverse engineering, malware analysis, threat hunting and infrastructure tracking. All the fun stuff.</span>
+      <span class="lang-fr">Write-ups sur le reverse engineering, l'analyse de malwares, le threat hunting et le tracking d'infrastructures. Que du fun.</span>
+    </p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="post-list">
+    {% for post in site.posts %}
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      <div class="meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        {% if post.tags and post.tags != empty %}
+        <span class="tags">{% for tag in post.tags limit: 4 %}<i>{{ tag }}</i>{% endfor %}</span>
+        {% endif %}
+      </div>
+      <h2>{{ post.title }}</h2>
+      <p class="excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      <span class="more"><span class="lang-en">Read the write-up →</span><span class="lang-fr">Lire le write-up →</span></span>
+    </a>
+    {% endfor %}
+
+    {% if site.posts.size == 0 %}
+    <div class="empty-state">
+      <span class="lang-en">// no posts yet — the hunt continues…</span>
+      <span class="lang-fr">// pas encore d'articles — la chasse continue…</span>
+    </div>
+    {% endif %}
+  </div>
+</div>

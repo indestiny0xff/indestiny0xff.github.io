@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} — Cyber Threat Intelligence · Malware Analysis · Detection Engineering{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }} — CTI · Malware Analysis · Detection Engineering{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="theme-color" content="#03050a">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <script>
+    // Apply saved theme/lang before first paint to avoid flash
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('lang');
+      if (l === 'fr' || l === 'en') {
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="{{ '/' | relative_url }}">othmaneb<span class="p">@cti</span>:~$</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="{{ '/' | relative_url }}#about"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+        <a href="{{ '/' | relative_url }}#huntingbadguys">HuntingBadGuys</a>
+        <a href="{{ '/' | relative_url }}#experience"><span class="lang-en">Experience</span><span class="lang-fr">Expérience</span></a>
+        <a href="{{ '/' | relative_url }}#projects"><span class="lang-en">Projects</span><span class="lang-fr">Projets</span></a>
+        <a href="{{ '/' | relative_url }}#skills"><span class="lang-en">Skills</span><span class="lang-fr">Compétences</span></a>
+        <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}class="active"{% endif %}>Blog</a>
+        <a href="{{ '/' | relative_url }}#contact">Contact</a>
+      </div>
+      <div class="nav-ctrl">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button id="langEn" type="button">EN</button>
+          <button id="langFr" type="button">FR</button>
+        </div>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle theme">
+          <span class="ico-sun">☀</span><span class="ico-moon">☾</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <footer class="site-foot">
+    <div class="foot-inner">
+      <div class="l">© 2026 othmaneb · <span class="lang-en">Hunt the infrastructure, extract the intelligence.</span><span class="lang-fr">Traquer l'infrastructure, extraire le renseignement.</span></div>
+      <div class="r">
+        <a href="https://github.com/indestiny0xff" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/indestiny_cti" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://huntingbadguys.online" target="_blank" rel="noopener">HuntingBadGuys</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -30,16 +30,28 @@ Public handles that ARE allowed: GitHub `indestiny0xff`, X/Twitter `indestiny_ct
 _config.yml            — Jekyll config (no theme; jekyll-feed, jekyll-sitemap, jemoji)
 _layouts/default.html  — shell: nav, EN/FR switch, dark/light toggle, footer, favicon links
 _layouts/post.html     — blog article (loads local highlight.js: powershell, plaintext, tsql)
-index.html             — the whole portfolio one-pager (bilingual), incl. the interactive scan console
+index.html             — the whole portfolio one-pager (bilingual); the HBG section embeds the
+                         REAL huntingbadguys.online/demo in an iframe (.browser window,
+                         click-to-load facade #hbgFacade → #hbgFrame)
 blog/index.html        — post list
 404.html               — themed 404
-assets/css/main.css    — entire design system (incl. .console demo styles)
-assets/js/main.js      — theme/lang persistence (localStorage), mobile nav, reveal-on-scroll,
-                         hero terminal typing, and the simulated HBG scan console (#hbgConsole,
-                         SCENARIOS data: phish/ransom/c2/generic; all data synthetic, IPs from
-                         RFC 5737 doc ranges, fictional .onion)
+assets/css/main.css    — entire design system (.browser demo window, .spec-grid key facts,
+                         .status-pill animated availability badge, motion system with
+                         cubic-bezier(.22,1,.36,1) and --stagger reveal delays)
+assets/js/main.js      — theme/lang persistence (localStorage), mobile nav, nav .scrolled state,
+                         scrollspy, staggered reveal-on-scroll, hero terminal typing, and the
+                         click-to-load demo iframe with a new-tab fallback hint after 6 s
 assets/favicon.svg     — crosshair favicon (purple ring, cyan dot); favicon.ico is the multi-size
                          raster version generated with PIL (regenerate both together if changed)
+
+## Embedded demo dependency
+
+The iframe only renders once huntingbadguys.online allows framing. The HBG repo
+(C:\Users\othma\Desktop\Code\HuntingBadGuys) must serve, for the /demo path only,
+CSP `frame-ancestors 'self' https://indestiny0xff.github.io` instead of 'none', and must not
+send X-Frame-Options DENY on that path (app/middleware.py sets both; nginx/conf.d/app.conf also
+adds a blanket X-Frame-Options SAMEORIGIN that should be dropped). Until HBG is redeployed with
+that change, the facade shows a fallback link to open the demo in a new tab.
 _posts/                — blog posts (markdown, front matter: layout post, title, tags)
 js/highlightjs/        — vendored highlight.js core + 3 language packs
 ```

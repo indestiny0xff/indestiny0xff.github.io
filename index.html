@@ -7,10 +7,12 @@ description: "othmaneb is an R&D engineer in Cyber Threat Intelligence, Malware 
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="badge-avail">
-        <span class="dot"></span>
-        <span class="lang-en">OPEN TO OPPORTUNITIES · SEPTEMBER 2026</span>
-        <span class="lang-fr">DISPONIBLE · SEPTEMBRE 2026</span>
+      <span class="status-pill">
+        <span class="status-inner">
+          <span class="dot"></span>
+          <span class="lang-en">OPEN TO OPPORTUNITIES&nbsp;·&nbsp;SEPTEMBER 2026</span>
+          <span class="lang-fr">DISPONIBLE&nbsp;·&nbsp;SEPTEMBRE 2026</span>
+        </span>
       </span>
       <h1>
         <span class="lang-en">Hunting threats,<br>building the <span class="grad">tools to do it</span>.</span>
@@ -90,107 +92,90 @@ description: "othmaneb is an R&D engineer in Cyber Threat Intelligence, Malware 
       <span class="lang-fr"><strong>Une plateforme de Threat Infrastructure Intelligence</strong> que j'ai conçue et développée de bout en bout. Elle analyse et corrèle les infrastructures malveillantes à grande échelle : domaines, IPs, certificats, données ASN et contenu web. Vous soumettez des cibles, vous obtenez du renseignement prêt pour l'investigation.</span>
     </p>
 
-    <!-- Context: public tracking today -->
-    <div class="demo-ctx reveal">
-      <p>
-        <span class="lang-en">Threat infrastructure tracking has become a public, community-driven effort. Ransomware leak sites are monitored by open trackers, and phishing infrastructure is reported every day through feeds such as <strong>OpenPhish</strong>, <strong>URLhaus</strong> and <strong>ThreatFox</strong>. HuntingBadGuys ingests these feeds automatically, and its <a href="https://huntingbadguys.online/public" target="_blank" rel="noopener">public intel page</a> shares scans of ransomware and phishing infrastructure that anyone can browse.</span>
-        <span class="lang-fr">Le tracking d'infrastructures malveillantes est devenu un effort public et communautaire. Les sites de fuite des groupes ransomware sont surveillés par des trackers ouverts, et les infrastructures de phishing sont signalées chaque jour via des feeds comme <strong>OpenPhish</strong>, <strong>URLhaus</strong> et <strong>ThreatFox</strong>. HuntingBadGuys ingère ces feeds automatiquement, et sa <a href="https://huntingbadguys.online/public" target="_blank" rel="noopener">page d'intel publique</a> partage des scans d'infrastructures ransomware et phishing que chacun peut consulter.</span>
-      </p>
-      <p>
-        <span class="lang-en">The console below simulates a HuntingBadGuys scan on realistic sample data, so you can experience the workflow directly from this page. Pick a target, run the analysis, and watch the platform correlate the evidence. For real scans against live infrastructure, open the <a href="https://huntingbadguys.online/demo" target="_blank" rel="noopener">full demo</a>.</span>
-        <span class="lang-fr">La console ci-dessous simule un scan HuntingBadGuys sur des données d'exemple réalistes, pour que vous puissiez tester le workflow directement depuis cette page. Choisissez une cible, lancez l'analyse, et regardez la plateforme corréler les indices. Pour de vrais scans sur des infrastructures actives, ouvrez la <a href="https://huntingbadguys.online/demo" target="_blank" rel="noopener">démo complète</a>.</span>
-      </p>
-    </div>
-
-    <!-- Interactive scan console -->
-    <div class="console reveal" id="hbgConsole">
-      <div class="console-head">
-        <i></i><i></i><i></i>
-        <span class="addr">hbg://scan</span>
-        <span class="sim">SIMULATION</span>
+    <!-- Embedded live demo window -->
+    <div class="browser reveal" id="hbgBrowser">
+      <div class="browser-chrome">
+        <span class="b-dots"><i></i><i></i><i></i></span>
+        <span class="urlbar"><span class="lock">🔒</span> https://<b>huntingbadguys.online</b>/demo</span>
+        <a class="b-open" href="https://huntingbadguys.online/demo" target="_blank" rel="noopener" title="Open in a new tab">
+          <span class="lang-en">Full screen ↗</span><span class="lang-fr">Plein écran ↗</span>
+        </a>
       </div>
-      <div class="console-ctl">
-        <div class="preset-row">
-          <span class="lbl"><span class="lang-en">targets:</span><span class="lang-fr">cibles :</span></span>
-          <button class="preset" type="button" data-key="phish"><em class="pt-phish">PHISHING</em>secure-paypa1-login.com</button>
-          <button class="preset" type="button" data-key="ransom"><em class="pt-ransom">RANSOMWARE</em>leaksblog7xq4v.onion</button>
-          <button class="preset" type="button" data-key="c2"><em class="pt-c2">C2</em>203.0.113.42</button>
+      <div class="browser-body">
+        <iframe id="hbgFrame" data-src="https://huntingbadguys.online/demo" title="HuntingBadGuys live demo"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+        <div class="facade" id="hbgFacade" role="button" tabindex="0"
+             aria-label="Launch the HuntingBadGuys live demo">
+          <span class="play">▶</span>
+          <span class="f-title"><span class="lang-en">Launch the live demo</span><span class="lang-fr">Lancer la démo live</span></span>
+          <span class="f-sub">
+            <span class="lang-en">The real platform, embedded here. Explore scans, graphs and IOC extraction without leaving this page.</span>
+            <span class="lang-fr">La vraie plateforme, intégrée ici. Explorez les scans, les graphes et l'extraction d'IOCs sans quitter cette page.</span>
+          </span>
         </div>
-        <div class="scan-row">
-          <input id="demoInput" type="text" spellcheck="false" autocomplete="off"
-                 placeholder="domain, IP or .onion">
-          <button class="btn btn-primary" id="demoRun" type="button">
-            <span class="lang-en">▶ Analyse</span><span class="lang-fr">▶ Analyser</span>
-          </button>
-        </div>
-      </div>
-      <div class="console-panes">
-        <div class="pane-stream" id="demoStream">
-          <span class="ln hint"><span class="lang-en">// pick a preset target or type your own, then press Analyse</span><span class="lang-fr">// choisissez une cible ou tapez la vôtre, puis cliquez sur Analyser</span></span>
-        </div>
-        <div class="pane-results" id="demoResults">
-          <span class="res-title"><span class="lang-en">RESULTS</span><span class="lang-fr">RÉSULTATS</span></span>
-        </div>
-      </div>
-      <div class="console-foot">
-        <span><span class="lang-en">Synthetic data for demonstration. Nothing real is scanned from this page.</span><span class="lang-fr">Données synthétiques de démonstration. Rien n'est réellement scanné depuis cette page.</span></span>
-        <a href="https://huntingbadguys.online/demo" target="_blank" rel="noopener"><span class="lang-en">Run the real thing →</span><span class="lang-fr">Tester en réel →</span></a>
       </div>
     </div>
+    <p class="demo-note reveal">
+      <span class="lang-en">Ransomware leak sites and phishing campaigns are now tracked in the open through community feeds such as OpenPhish, URLhaus and ThreatFox. HuntingBadGuys ingests them automatically and publishes community scans on its <a href="https://huntingbadguys.online/public" target="_blank" rel="noopener">public intel page</a>.</span>
+      <span class="lang-fr">Les sites de fuite ransomware et les campagnes de phishing sont aujourd'hui traqués publiquement via des feeds communautaires comme OpenPhish, URLhaus et ThreatFox. HuntingBadGuys les ingère automatiquement et publie des scans communautaires sur sa <a href="https://huntingbadguys.online/public" target="_blank" rel="noopener">page d'intel publique</a>.</span>
+    </p>
 
-    <div class="feat-grid">
-      <div class="feat reveal">
-        <span class="tag">COLLECTION</span>
-        <h3><span class="lang-en">Everything in a single scan</span><span class="lang-fr">Tout en un seul scan</span></h3>
-        <p><span class="lang-en">Each target goes through DNS, WHOIS, HTTP chain tracing with TLS details, screenshots, root-file fingerprinting, web crawling, Certificate Transparency and BGP/ASN plus GeoIP enrichment. All tasks run concurrently.</span><span class="lang-fr">Chaque cible passe par le DNS, le WHOIS, le traçage de chaînes HTTP avec détails TLS, les screenshots, le fingerprinting de fichiers, le crawling web, la Certificate Transparency et l'enrichissement BGP/ASN et GeoIP. Toutes les tâches s'exécutent en parallèle.</span></p>
+    <div class="spec-grid">
+      <div class="spec reveal">
+        <span class="v">16+</span>
+        <span class="l"><span class="lang-en">collection modules, all concurrent</span><span class="lang-fr">modules de collecte, tous en parallèle</span></span>
+        <span class="kw"><i>DNS</i><i>WHOIS</i><i>HTTP + TLS</i><i>CT logs</i><i>BGP/ASN</i><i>GeoIP</i><i>Screenshots</i><i>Crawler</i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">EFI · IOC ENGINE</span>
-        <h3><span class="lang-en">65-pattern IOC extraction</span><span class="lang-fr">Extraction d'IOCs : 65 patterns</span></h3>
-        <p><span class="lang-en">A custom extraction engine covers crypto wallets, API key leaks, C2 channels, onion services and social media identifiers. It runs 65 regex patterns across 10 threat-relevant categories, per file, per result or per case.</span><span class="lang-fr">Un moteur d'extraction custom couvre les crypto wallets, les fuites de clés API, les canaux C2, les services onion et les identifiants de réseaux sociaux. Il exécute 65 patterns regex répartis en 10 catégories, par fichier, par résultat ou par case.</span></p>
+      <div class="spec reveal">
+        <span class="v">65</span>
+        <span class="l"><span class="lang-en">IOC patterns · 10 categories</span><span class="lang-fr">patterns IOC · 10 catégories</span></span>
+        <span class="kw"><i>crypto wallets</i><i>API keys</i><i>C2</i><i>.onion</i><i>social handles</i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">EFA · BINARY LAB</span>
-        <h3><span class="lang-en">Low-level binary analysis</span><span class="lang-fr">Analyse binaire bas niveau</span></h3>
-        <p><span class="lang-en">Static file analysis provides entropy scoring and magic-byte detection, together with a hex view, disassembly and decompiled-code views, DIE-based binary identification, and APK/IPA mobile analysis with JADX decompilation.</span><span class="lang-fr">L'analyse statique fournit un scoring d'entropie et la détection de magic bytes, ainsi qu'une vue hexadécimale, le désassemblage et le code décompilé, l'identification de binaires via DIE, et l'analyse mobile APK/IPA avec décompilation JADX.</span></p>
+      <div class="spec reveal">
+        <span class="v">EFA</span>
+        <span class="l"><span class="lang-en">binary analysis lab</span><span class="lang-fr">labo d'analyse binaire</span></span>
+        <span class="kw"><i>hex view</i><i>disassembly</i><i>decompiler</i><i>DIE</i><i>APK/IPA</i><i>JADX</i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">GRAPH</span>
-        <h3><span class="lang-en">Infrastructure relationship graph</span><span class="lang-fr">Graphe de relations d'infrastructure</span></h3>
-        <p><span class="lang-en">An interactive graph links domains, IPs, ASNs, certificates and countries across a case. Visual similarity based on pHash and content similarity powered by MinHash cluster look-alike phishing pages automatically.</span><span class="lang-fr">Un graphe interactif relie domaines, IPs, ASNs, certificats et pays d'une même case. La similarité visuelle par pHash et la similarité de contenu par MinHash regroupent automatiquement les pages de phishing similaires.</span></p>
+      <div class="spec reveal">
+        <span class="v">GRAPH</span>
+        <span class="l"><span class="lang-en">infrastructure correlation</span><span class="lang-fr">corrélation d'infrastructure</span></span>
+        <span class="kw"><i>pHash</i><i>MinHash</i><i><span class="lang-en">interactive</span><span class="lang-fr">interactif</span></i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">QUERY LANGUAGE</span>
-        <h3><span class="lang-en">AST-based query engine</span><span class="lang-fr">Moteur de requêtes basé AST</span></h3>
-        <p><span class="lang-en">A hand-built tokenizer, parser and evaluator provides dot-notation field access, regex, boolean logic and existence operators. Every collected field can be filtered across an entire investigation.</span><span class="lang-fr">Un tokenizer, parser et evaluator faits main offrent l'accès aux champs en notation pointée, les regex, la logique booléenne et les opérateurs d'existence. Chaque champ collecté peut être filtré sur toute une investigation.</span></p>
+      <div class="spec reveal">
+        <span class="v">AST</span>
+        <span class="l"><span class="lang-en">custom query language</span><span class="lang-fr">langage de requête custom</span></span>
+        <span class="kw"><i>regex</i><i><span class="lang-en">boolean logic</span><span class="lang-fr">logique booléenne</span></i><i>dot-notation</i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">AUTOMATION</span>
-        <h3><span class="lang-en">Feeds, alerts &amp; monitoring</span><span class="lang-fr">Feeds, alertes &amp; monitoring</span></h3>
-        <p><span class="lang-en">The platform ingests threat-intel feeds automatically (OpenPhish, URLhaus, ThreatFox and ransomware trackers) and schedules re-scans with query-based filters and e-mail alerts on new matches.</span><span class="lang-fr">La plateforme ingère automatiquement des feeds de threat intel (OpenPhish, URLhaus, ThreatFox et trackers ransomware) et planifie des re-scans avec filtres basés sur des requêtes et alertes e-mail sur nouveaux résultats.</span></p>
+      <div class="spec reveal">
+        <span class="v">4</span>
+        <span class="l"><span class="lang-en">feeds ingested automatically</span><span class="lang-fr">feeds ingérés automatiquement</span></span>
+        <span class="kw"><i>OpenPhish</i><i>URLhaus</i><i>ThreatFox</i><i>ransomware trackers</i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">REPORTING</span>
-        <h3><span class="lang-en">One-click investigation reports</span><span class="lang-fr">Rapports d'investigation en un clic</span></h3>
-        <p><span class="lang-en">A markdown CTI editor offers live preview, @-autocomplete for case entities and embedded relationship graphs. Reports are publishable to a public threat-hunting blog with HTML report, SVG graph and STIX 2.1 bundle downloads.</span><span class="lang-fr">Un éditeur CTI markdown offre une preview live, l'autocomplétion @ des entités de la case et des graphes intégrés. Les rapports sont publiables sur un blog public de threat hunting, avec rapport HTML, graphe SVG et bundle STIX 2.1 téléchargeables.</span></p>
+      <div class="spec reveal">
+        <span class="v"><span class="lang-en">1-click</span><span class="lang-fr">1 clic</span></span>
+        <span class="l"><span class="lang-en">investigation reports</span><span class="lang-fr">rapports d'investigation</span></span>
+        <span class="kw"><i>HTML</i><i><span class="lang-en">SVG graph</span><span class="lang-fr">graphe SVG</span></i><i>STIX 2.1</i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">OPSEC</span>
-        <h3><span class="lang-en">Tor / .onion &amp; low profile</span><span class="lang-fr">Tor / .onion &amp; discrétion</span></h3>
-        <p><span class="lang-en">Hidden-service analysis is routed through SOCKS5 automatically. A random exit-IP mode enables low-profile clearnet collection, screenshots evade bot detection, and every result has its own privacy control.</span><span class="lang-fr">L'analyse des hidden services est routée automatiquement via SOCKS5. Un mode IP de sortie aléatoire permet une collecte discrète sur le clearnet, les screenshots contournent la détection de bots, et chaque résultat dispose de son propre contrôle de confidentialité.</span></p>
+      <div class="spec reveal">
+        <span class="v">TOR</span>
+        <span class="l"><span class="lang-en">opsec by default</span><span class="lang-fr">opsec par défaut</span></span>
+        <span class="kw"><i>.onion</i><i>SOCKS5</i><i><span class="lang-en">random exit IP</span><span class="lang-fr">IP de sortie aléatoire</span></i></span>
       </div>
-      <div class="feat reveal">
-        <span class="tag">TEAM</span>
-        <h3><span class="lang-en">Built for collaboration</span><span class="lang-fr">Pensé pour le travail d'équipe</span></h3>
-        <p><span class="lang-en">Folders and cases organise investigations, an authenticated team feed shares results, and a common reports browser lets anyone pick up a write-up. The platform covers the full path from raw scans to a published intelligence product.</span><span class="lang-fr">Les dossiers et cases organisent les investigations, un feed d'équipe authentifié partage les résultats, et une bibliothèque de rapports commune permet à chacun de reprendre un write-up. La plateforme couvre tout le chemin du scan brut au produit de renseignement publié.</span></p>
+      <div class="spec reveal">
+        <span class="v">TEAM</span>
+        <span class="l"><span class="lang-en">built for collaboration</span><span class="lang-fr">pensé pour l'équipe</span></span>
+        <span class="kw"><i>cases</i><i>intel feed</i><i><span class="lang-en">CTI blog</span><span class="lang-fr">blog CTI</span></i><i><span class="lang-en">alerts</span><span class="lang-fr">alertes</span></i></span>
       </div>
     </div>
 
-    <div class="stats-row">
-      <div class="stat reveal"><b>16+</b><span><span class="lang-en">collection modules</span><span class="lang-fr">modules de collecte</span></span></div>
-      <div class="stat reveal"><b>65</b><span><span class="lang-en">IOC extraction patterns</span><span class="lang-fr">patterns d'extraction IOC</span></span></div>
-      <div class="stat reveal"><b>10</b><span><span class="lang-en">threat categories covered</span><span class="lang-fr">catégories de menaces couvertes</span></span></div>
-      <div class="stat reveal"><b>STIX 2.1</b><span><span class="lang-en">export-ready intelligence</span><span class="lang-fr">renseignement exportable</span></span></div>
+    <div class="hbg-cta reveal">
+      <a class="btn btn-ghost" href="https://huntingbadguys.online/features" target="_blank" rel="noopener">
+        <span class="lang-en">All features ↗</span><span class="lang-fr">Toutes les features ↗</span>
+      </a>
+      <a class="btn btn-ghost" href="https://huntingbadguys.online/public" target="_blank" rel="noopener">
+        <span class="lang-en">Public intel ↗</span><span class="lang-fr">Intel publique ↗</span>
+      </a>
     </div>
   </div>
 </section>
@@ -213,10 +198,12 @@ description: "othmaneb is an R&D engineer in Cyber Threat Intelligence, Malware 
           <li class="lang-en">Automated the production of <strong>vulnerability monitoring reports</strong> on critical vulnerabilities, turning a manual process of several hours into a repeatable pipeline that delivers consistent briefings to clients.</li>
           <li class="lang-en">Designed <strong>Suricata and YARA detection rules</strong> that extend the product's coverage of current attacker tooling and techniques.</li>
           <li class="lang-en">Produced <strong>threat actor intelligence reports</strong> that feed both detection priorities and client-facing briefings.</li>
+          <li class="lang-en">Conducted an <strong>applied study on LLMs</strong> and established a methodology to process information efficiently and obtain consistent, reliable results on business tasks. This methodology now underpins the ruleset enrichment engine.</li>
           <li class="lang-fr">Conception d'un <strong>moteur d'enrichissement de rulesets Suricata</strong> basé sur les LLMs et la threat intelligence. Il ajoute du contexte et une aide au verdict à chaque alerte remontée par le NDR, ce qui réduit l'effort de triage manuel des analystes SOC.</li>
           <li class="lang-fr">Automatisation de la production des <strong>rapports de veille sur les vulnérabilités critiques</strong>, transformant un processus manuel de plusieurs heures en pipeline reproductible qui livre des bulletins cohérents aux clients.</li>
           <li class="lang-fr">Conception de <strong>règles de détection Suricata et YARA</strong> qui étendent la couverture du produit face aux outils et techniques d'attaque actuels.</li>
           <li class="lang-fr">Rédaction de <strong>rapports de renseignement sur les acteurs de la menace</strong> qui alimentent à la fois les priorités de détection et les briefings clients.</li>
+          <li class="lang-fr">Réalisation d'une <strong>étude appliquée sur les LLMs</strong> et mise en place d'une méthodologie pour traiter efficacement l'information et obtenir des résultats cohérents et fiables sur des tâches métier. Cette méthodologie sous-tend aujourd'hui le moteur d'enrichissement de rulesets.</li>
         </ul>
       </div>
       <div class="tl-item reveal">
@@ -391,8 +378,8 @@ description: "othmaneb is an R&D engineer in Cyber Threat Intelligence, Malware 
   <div class="wrap">
     <div class="contact-box reveal">
       <h2>
-        <span class="lang-en">Let's hunt together.</span>
-        <span class="lang-fr">Chassons ensemble.</span>
+        <span class="lang-en">Let's work together.</span>
+        <span class="lang-fr">Travaillons ensemble.</span>
       </h2>
       <p>
         <span class="lang-en">I am looking for a technical <strong style="color:var(--text)">CTI, malware analysis, detection engineering or blue team</strong> role starting <strong style="color:var(--text)">September 2026</strong>, in France or abroad. If my profile fits your team, I would be glad to talk.</span>

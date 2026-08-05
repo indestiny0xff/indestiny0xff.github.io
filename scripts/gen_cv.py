@@ -38,7 +38,7 @@ class CV(FPDF):
         self.ln(1.5)
 
     def section(self, label):
-        self.ln(2.2)
+        self.ln(1.6)
         self.set_font("Main", "B", 9.6)
         self.set_text_color(*ACCENT)
         self.cell(0, 5, label.upper(), new_x="LMARGIN", new_y="NEXT")
@@ -46,9 +46,9 @@ class CV(FPDF):
         self.set_line_width(0.3)
         y = self.get_y() + 0.4
         self.line(M, y, 210 - M, y)
-        self.ln(1.6)
+        self.ln(1.4)
 
-    def para(self, text, size=8.8, color=TEXT, lh=4.1):
+    def para(self, text, size=8.8, color=TEXT, lh=4.0):
         self.set_font("Main", "", size)
         self.set_text_color(*color)
         self.multi_cell(W, lh, text, new_x="LMARGIN", new_y="NEXT")
@@ -67,22 +67,22 @@ class CV(FPDF):
     def bullet(self, text):
         self.set_font("Main", "", 8.8)
         self.set_text_color(*TEXT)
-        self.cell(4, 4.1, "-")
-        self.multi_cell(W - 4, 4.1, text, new_x="LMARGIN", new_y="NEXT")
+        self.cell(4, 4.0, "-")
+        self.multi_cell(W - 4, 4.0, text, new_x="LMARGIN", new_y="NEXT")
 
     def proj(self, name, desc):
         self.set_font("Main", "", 8.8)
         self.set_text_color(*TEXT)
-        self.multi_cell(W, 4.2, f"**{name}** {desc}", markdown=True,
+        self.multi_cell(W, 4.0, f"**{name}** {desc}", markdown=True,
                         new_x="LMARGIN", new_y="NEXT")
         self.ln(0.8)
 
     def kv(self, key, val):
         self.set_font("Main", "B", 8.8)
         self.set_text_color(*TEXT)
-        self.cell(38, 4.4, key)
+        self.cell(38, 4.2, key)
         self.set_font("Main", "", 8.8)
-        self.multi_cell(W - 38, 4.4, val, new_x="LMARGIN", new_y="NEXT")
+        self.multi_cell(W - 38, 4.2, val, new_x="LMARGIN", new_y="NEXT")
 
 
 def build_en():
@@ -125,6 +125,13 @@ def build_en():
     p.bullet("Performed malware analysis covering infection chains, obfuscation and encryption methods, "
              "and turned the findings into actionable intelligence.")
     p.bullet("Mapped cybercrime groups' infrastructure in support of long-term tracking and attribution.")
+    p.ln(1.5)
+    p.role("Security Automation Intern", "ORHUS", "Jul 2023 - Aug 2023")
+    p.bullet("Analysed Google Workspace security processes (identity management, access controls, "
+             "configuration baselines) and developed Python tooling automating configuration audits, "
+             "policy enforcement checks and monitoring workflows.")
+    p.bullet("Recommended security posture and architecture improvements focused on risk reduction, "
+             "scalability and operational efficiency.")
 
     p.section("Projects")
     p.proj("HuntingBadGuys (huntingbadguys.online).",
@@ -202,6 +209,11 @@ def build_fr():
              "avec transformation des résultats en renseignement actionnable.")
     p.bullet("Cartographie de l'infrastructure des groupes cybercriminels en soutien au tracking de long "
              "terme et à l'attribution.")
+    p.ln(1.5)
+    p.role("Stagiaire en automatisation sécurité", "ORHUS", "Juil 2023 - Août 2023")
+    p.bullet("Audit de sécurité d'un environnement Google Workspace (identités, contrôles d'accès, "
+             "configurations) avec développement d'outils Python automatisant audits, contrôles de "
+             "politiques et supervision, et recommandations d'améliorations de la posture de sécurité.")
 
     p.section("Projets")
     p.proj("HuntingBadGuys (huntingbadguys.online).",

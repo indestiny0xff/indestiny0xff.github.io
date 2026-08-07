@@ -13,7 +13,7 @@ Never introduce any of the following anywhere on the site:
 
 - **Full last name in site text**: use only "othmaneb" / "Othmane B."
 - **Phone number**: never.
-- **Personal email**: the ONLY contact email allowed is `ada.moonstone746@passmail.com`.
+- **Personal email**: the ONLY contact email allowed is `othmaneb@proton.me`.
 - **Photos**: none.
 - The ORIGINAL full-name CV PDFs must never be committed to this repo. The sanitized CVs in
   assets/cv/ (OthmaneB_CV_EN.pdf / _FR.pdf) are intentional: "Othmane B." only, alias email,

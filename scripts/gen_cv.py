@@ -3,8 +3,22 @@ import os
 
 from fpdf import FPDF
 
-OUT_DIR = r"C:\Users\othma\Desktop\Code\indestiny0xff.github.io\assets\cv"
-FONT_DIR = r"C:\Windows\Fonts"
+OUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "cv")
+
+# Segoe UI on Windows, Liberation Sans (metrically similar) elsewhere.
+_FONT_CANDIDATES = [
+    {
+        "": r"C:\Windows\Fonts\segoeui.ttf",
+        "B": r"C:\Windows\Fonts\segoeuib.ttf",
+        "I": r"C:\Windows\Fonts\segoeuii.ttf",
+    },
+    {
+        "": "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+        "B": "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "I": "/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf",
+    },
+]
+FONTS = next(f for f in _FONT_CANDIDATES if all(os.path.exists(p) for p in f.values()))
 
 ACCENT = (109, 40, 217)      # purple, matches the site
 TEXT = (26, 26, 30)
@@ -20,9 +34,9 @@ class CV(FPDF):
         super().__init__(format="A4")
         self.set_margins(M, M, M)
         self.set_auto_page_break(True, margin=12)
-        self.add_font("Main", "", os.path.join(FONT_DIR, "segoeui.ttf"))
-        self.add_font("Main", "B", os.path.join(FONT_DIR, "segoeuib.ttf"))
-        self.add_font("Main", "I", os.path.join(FONT_DIR, "segoeuii.ttf"))
+        self.add_font("Main", "", FONTS[""])
+        self.add_font("Main", "B", FONTS["B"])
+        self.add_font("Main", "I", FONTS["I"])
         self.set_font("Main", "", 9)
 
     def header_block(self, name, title, contact):
@@ -91,7 +105,7 @@ def build_en():
     p.header_block(
         "OTHMANE B.",
         "R&D Engineer · Cyber Threat Intelligence · Malware Analysis · Detection Engineering",
-        "Paris, France  |  ada.moonstone746@passmail.com  |  github.com/indestiny0xff  |  "
+        "Paris, France  |  othmaneb@proton.me  |  github.com/indestiny0xff  |  "
         "huntingbadguys.online  |  x.com/indestiny_cti",
     )
 
@@ -156,6 +170,7 @@ def build_en():
     p.kv("Reverse engineering", "Ghidra, IDA, x32dbg/x64dbg, Windows/Linux kernel internals")
     p.kv("Detection", "Suricata, YARA, Sigma, KQL")
     p.kv("CTI & OSINT", "MISP, OpenCTI, Censys, Shodan, Urlscan, VirusTotal, API reverse engineering")
+    p.kv("Systems & tooling", "Linux, Docker, Git, virtualization")
 
     p.section("Education & Certifications")
     p.kv("Master's degree", "Intelligence & Cyber Threats, Reverse Engineering specialization, "
@@ -174,7 +189,7 @@ def build_fr():
     p.header_block(
         "OTHMANE B.",
         "Ingénieur R&D · Cyber Threat Intelligence · Analyse de malwares · Detection Engineering",
-        "Paris, France  |  ada.moonstone746@passmail.com  |  github.com/indestiny0xff  |  "
+        "Paris, France  |  othmaneb@proton.me  |  github.com/indestiny0xff  |  "
         "huntingbadguys.online  |  x.com/indestiny_cti",
     )
 
@@ -238,6 +253,7 @@ def build_fr():
     p.kv("Reverse engineering", "Ghidra, IDA, x32dbg/x64dbg, internals kernel Windows/Linux")
     p.kv("Détection", "Suricata, YARA, Sigma, KQL")
     p.kv("CTI & OSINT", "MISP, OpenCTI, Censys, Shodan, Urlscan, VirusTotal, reverse d'API")
+    p.kv("Systèmes & outils", "Linux, Docker, Git, virtualisation")
 
     p.section("Formation & Certifications")
     p.kv("Mastère", "Renseignement & Cybermenace, spécialisation Reverse Engineering, "

@@ -63,7 +63,11 @@ js/highlightjs/        — vendored highlight.js core + 3 language packs
 
 - **i18n**: duplicated content blocks with classes `.lang-en` / `.lang-fr`; CSS hides the inactive one via `html[data-lang]`. Every user-visible string must exist in both languages. Default is EN; choice persisted in `localStorage.lang`.
 - **Themes**: `html[data-theme="dark"]` (default) = black/purple, matching HuntingBadGuys (`#03050a` bg, `#7c3aed`/`#a855f7` accents). `light` = cream (`#f5f0e8` bg, `#6d28d9` accent). All colors via CSS variables in `main.css` — never hardcode colors in HTML except via `var(--*)`.
-- Fonts: Inter (UI) + JetBrains Mono (accents/code), loaded from Google Fonts in `default.html`.
+- Fonts: Geist Mono (everything, body included) + Michroma (display headings, weight 400 only,
+  never faux-bold it), loaded from Google Fonts in `default.html`. The visual language follows
+  hacktron.ai: square corners (`--radius: 0`), hairline borders, uppercase tracked micro-labels,
+  bordered chips/eyebrows, flat hover states (border/background change, no translateY lifts).
+  Colors stayed the original black/purple (dark) and cream (light) palettes.
 - Code blocks in posts stay dark in BOTH themes (`--code-bg`); hljs colors are overridden at the bottom of `main.css`.
 - New blog post: `_posts/YYYY-MM-DD-Title.md` with front matter `layout: post`, `title`, `tags: [..]`.
 

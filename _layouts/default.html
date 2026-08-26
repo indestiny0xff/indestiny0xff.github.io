@@ -33,14 +33,17 @@
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <nav class="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="{{ '/' | relative_url }}">othmaneb<span class="p">@cti</span>:~$</a>
-      <button class="nav-burger" id="navBurger" aria-label="Menu">☰</button>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
       <div class="nav-links" id="navLinks">
         <div class="nav-item">
-          <a class="nav-top{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Portfolio <span class="chev">▾</span></a>
+          <a class="nav-top{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Portfolio <span class="chev"><svg viewBox="0 0 24 24" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></span></a>
           <div class="drop">
             <a href="{{ '/' | relative_url }}#about"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
             <a href="{{ '/' | relative_url }}#huntingbadguys">HuntingBadGuys</a>
@@ -60,7 +63,8 @@
           <button id="langFr" type="button">FR</button>
         </div>
         <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle theme">
-          <span class="ico-sun">☀</span><span class="ico-moon">☾</span>
+          <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+          <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.6A8.1 8.1 0 0 1 10.4 4a8.1 8.1 0 1 0 9.6 9.6Z"/></svg>
         </button>
       </div>
     </div>

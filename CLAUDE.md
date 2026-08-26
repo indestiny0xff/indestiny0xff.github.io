@@ -39,11 +39,15 @@ index.html             — the whole portfolio one-pager (bilingual); the HBG se
 blog/index.html        — post list
 404.html               — themed 404
 assets/css/main.css    — entire design system (.browser demo window, .spec-grid key facts,
-                         .status-pill animated availability badge, motion system with
-                         cubic-bezier(.22,1,.36,1) and --stagger reveal delays)
+                         .status-pill availability badge with pulsing square marker, motion
+                         system with cubic-bezier(.22,1,.36,1) and --stagger reveal delays,
+                         .hunt-map hero background graph, .contact-box .reticle radar,
+                         .scroll-progress hairline, targeting-bracket ghost-button hover,
+                         themed scrollbars and :focus-visible rings)
 assets/js/main.js      — theme/lang persistence (localStorage), mobile nav, nav .scrolled state,
-                         scrollspy, staggered reveal-on-scroll, hero terminal typing, and the
-                         click-to-load demo iframe with a new-tab fallback hint after 6 s
+                         scroll progress bar, scrollspy, staggered reveal-on-scroll, hero
+                         terminal typing, and the click-to-load demo iframe with a new-tab
+                         fallback hint after 6 s
 assets/favicon.svg     — crosshair favicon (purple ring, cyan dot); favicon.ico is the multi-size
                          raster version generated with PIL (regenerate both together if changed)
 

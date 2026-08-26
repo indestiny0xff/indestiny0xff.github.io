@@ -42,8 +42,16 @@
     });
   }
   if (nav) {
-    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 10); };
+    var prog = document.getElementById('scrollProgress');
+    var onScroll = function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+      if (prog) {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+      }
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   }
   // Scrollspy: highlight the nav link of the section in view (home page only)

@@ -5,32 +5,24 @@ description: "othmaneb is an R&D engineer in Cyber Threat Intelligence, Malware 
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <!-- Radar: slow hunting sweep drawn behind the hero, top right -->
-  <svg class="hero-radar" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
-    <g class="rd-rings" style="fill:none">
-      <circle cx="400" cy="400" r="100"/>
-      <circle cx="400" cy="400" r="180"/>
-      <circle cx="400" cy="400" r="260"/>
-      <circle cx="400" cy="400" r="340"/>
-      <line x1="400" y1="48" x2="400" y2="752"/>
-      <line x1="48" y1="400" x2="752" y2="400"/>
-    </g>
-    <circle class="rd-ticks" style="fill:none" cx="400" cy="400" r="352"/>
-    <g class="rd-sweep">
-      <path class="rd-wedge" d="M400 400 L400 60 A340 340 0 0 1 538 89 Z"/>
-      <line class="rd-beam" x1="400" y1="400" x2="400" y2="60"/>
-    </g>
-    <g class="rd-blips">
-      <rect x="243" y="271" width="8" height="8"/>
-      <rect x="468" y="534" width="8" height="8"/>
-      <rect class="rd-hot" x="516" y="286" width="8" height="8"/>
-      <rect class="rd-hot-pulse" x="516" y="286" width="8" height="8"/>
-    </g>
-    <g class="rd-labels">
-      <text x="259" y="266">phish-kit</text>
-      <text class="rd-c2" x="532" y="281">c2.panel</text>
-    </g>
-    <circle class="rd-core" cx="400" cy="400" r="3.5"/>
+  <!-- Butterflies: the brand mark drifting across the top of the hero -->
+  <svg class="hero-flies" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="bfly">
+        <g transform="translate(-32 -33)">
+          <path class="bw" d="M29 30 C24 12 10 6 7 13 C4 20 10 30 17 33 C9 35 8 45 13 51 C18 56 27 50 29 38 Z"/>
+          <path class="bw" d="M35 30 C40 12 54 6 57 13 C60 20 54 30 47 33 C55 35 56 45 51 51 C46 56 37 50 35 38 Z"/>
+          <ellipse class="bb" cx="32" cy="36" rx="2.4" ry="10.5"/>
+          <circle class="bb" cx="32" cy="22.5" r="3"/>
+          <path class="ba" d="M30.5 20.5 Q27 13 22 11 M33.5 20.5 Q37 13 42 11"/>
+        </g>
+      </g>
+    </defs>
+    <path class="btrail" d="M80 100 C 300 40 480 130 640 80 C 760 45 820 90 862 116"/>
+    <g transform="translate(884 118) rotate(-14) scale(2.4)"><use href="#bfly" class="fly f1"/></g>
+    <g transform="translate(1108 62) rotate(14) scale(1.5)"><use href="#bfly" class="fly f2"/></g>
+    <g transform="translate(636 72) rotate(8) scale(1.05)"><use href="#bfly" class="fly f3"/></g>
+    <g transform="translate(152 68) rotate(-10) scale(0.9)"><use href="#bfly" class="fly f4"/></g>
   </svg>
   <div class="wrap hero-grid">
     <div>

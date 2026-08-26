@@ -257,40 +257,29 @@ html[data-theme="light"] .theme-btn .ico-sun { display: none; }
 }
 @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } }
 
-/* ---------- Hero radar: slow hunting sweep behind the hero ---------- */
-.hero-radar {
-  position: absolute; z-index: 0; pointer-events: none;
-  top: -170px; right: -150px; width: 690px; height: 690px;
-  opacity: .55;
-  -webkit-mask-image: radial-gradient(58% 58% at 50% 50%, #000 55%, transparent 98%);
-          mask-image: radial-gradient(58% 58% at 50% 50%, #000 55%, transparent 98%);
+/* ---------- Hero butterflies: the brand mark drifting across the top ---------- */
+.hero-flies {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; opacity: .55;
 }
-html[data-theme="light"] .hero-radar { opacity: .5; }
-.rd-rings { stroke: var(--border-hi); stroke-width: 1; }
-.rd-ticks { stroke: var(--border-hi); stroke-width: 8; stroke-dasharray: 1.5 16.9; opacity: .7; }
-.rd-wedge { fill: var(--accent); opacity: .07; stroke: none; }
-.rd-beam { stroke: var(--accent-2); stroke-width: 1; opacity: .55; }
-.rd-sweep {
-  transform-box: view-box; transform-origin: 400px 400px;
-  animation: sweepSpin 12s linear infinite;
+html[data-theme="light"] .hero-flies { opacity: .6; }
+.hero-flies .bw { fill: var(--accent-soft); stroke: var(--accent-line); stroke-width: 1.3; }
+.hero-flies .bb { fill: var(--accent-2); opacity: .6; }
+.hero-flies .ba { fill: none; stroke: var(--accent-2); stroke-width: 1.3; opacity: .6; stroke-linecap: round; }
+.btrail {
+  fill: none; stroke: var(--accent-line); stroke-width: 1.5;
+  stroke-dasharray: 2 9; stroke-linecap: round; opacity: .7;
 }
-.rd-blips rect { fill: var(--muted); }
-.rd-blips .rd-hot, .rd-blips .rd-hot-pulse { fill: var(--accent-2); }
-.rd-blips .rd-hot-pulse {
-  transform-box: fill-box; transform-origin: center;
-  animation: nodePulse 3.2s ease-out infinite;
+.fly { animation: flyFloat 6s ease-in-out infinite; }
+.f2 { animation-duration: 7.5s; animation-delay: -2.5s; }
+.f3 { animation-duration: 5.2s; animation-delay: -1.2s; }
+.f4 { animation-duration: 8s; animation-delay: -4s; }
+@keyframes flyFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-4px) rotate(4deg); }
 }
-@keyframes nodePulse {
-  0%        { transform: scale(1); opacity: .8; }
-  70%, 100% { transform: scale(2.4); opacity: 0; }
-}
-.rd-labels text {
-  font-family: var(--mono); font-size: 9.5px; letter-spacing: .08em;
-  fill: var(--muted);
-}
-.rd-labels .rd-c2 { fill: var(--accent-2); }
-.rd-core { fill: var(--accent-2); }
-@media (max-width: 940px) { .hero-radar { display: none; } }
+@media (max-width: 940px) { .hero-flies { display: none; } }
 
 /* ---------- Margin story: chibi analyst doodles in the side gutters ---------- */
 .story-art {
@@ -766,8 +755,7 @@ body, .nav, .surfaced { transition: background-color .4s ease, color .4s ease; }
   .hero-grid > div:first-child > *, .hero-grid > .term { animation: none; }
   html { scroll-behavior: auto; }
   .t-caret, .facade .play,
-  .rd-sweep, .rd-hot-pulse, .rt-sweep { animation: none; }
-  .rd-hot-pulse { opacity: 0; }
+  .fly, .rt-sweep { animation: none; }
 }
 
 /* ============================================================

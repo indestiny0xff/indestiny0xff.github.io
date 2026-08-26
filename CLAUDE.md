@@ -41,7 +41,8 @@ blog/index.html        — post list
 assets/css/main.css    — entire design system (.browser demo window, .spec-grid key facts,
                          .status-pill availability badge with pulsing square marker, motion
                          system with cubic-bezier(.22,1,.36,1) and --stagger reveal delays,
-                         .hero-radar background sweep, .contact-box .reticle radar,
+                         .hero-flies butterflies drifting over the hero (brand mark, with a
+                         dashed flight trail), .contact-box .reticle radar,
                          .story-art chibi analyst doodles in the side gutters (8 scenes in
                          index.html telling the page's story: waves hello at ~/about,
                          launches the scan and is shocked by results at ~/huntingbadguys,

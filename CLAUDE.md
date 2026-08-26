@@ -41,9 +41,12 @@ blog/index.html        — post list
 assets/css/main.css    — entire design system (.browser demo window, .spec-grid key facts,
                          .status-pill availability badge with pulsing square marker, motion
                          system with cubic-bezier(.22,1,.36,1) and --stagger reveal delays,
-                         .hunt-map hero background graph, .contact-box .reticle radar,
+                         .hero-radar background sweep, .contact-box .reticle radar,
                          .scroll-progress hairline, targeting-bracket ghost-button hover,
-                         themed scrollbars and :focus-visible rings)
+                         themed scrollbars and :focus-visible rings). The stylesheet is
+                         linked with a ?v= cache-buster in default.html: bump it on every
+                         main.css change, otherwise stale cached CSS renders the inline
+                         SVG art broken (giant black-filled shapes)
 assets/js/main.js      — theme/lang persistence (localStorage), mobile nav, nav .scrolled state,
                          scroll progress bar, scrollspy, staggered reveal-on-scroll, hero
                          terminal typing, and the click-to-load demo iframe with a new-tab

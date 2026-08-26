@@ -259,8 +259,8 @@ html[data-theme="light"] .theme-btn .ico-sun { display: none; }
 
 /* ---------- Hero butterflies: the brand mark drifting across the top ---------- */
 .hero-flies {
-  position: absolute; inset: 0; z-index: 0;
-  width: 100%; height: 100%;
+  position: absolute; top: 64px; left: 0; z-index: 0;
+  width: 100%; height: auto;
   pointer-events: none; opacity: .55;
 }
 html[data-theme="light"] .hero-flies { opacity: .6; }

@@ -10,6 +10,8 @@ twitter_username: "indestiny_cti"
 
 rss: rss
 
+permalink: /blog/:title/
+
 kramdown:
   syntax_highlighter_opts:
     disable: true

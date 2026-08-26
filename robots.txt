@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://indestiny0xff.github.io/sitemap.xml

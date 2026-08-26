@@ -292,6 +292,25 @@ html[data-theme="light"] .hero-radar { opacity: .5; }
 .rd-core { fill: var(--accent-2); }
 @media (max-width: 940px) { .hero-radar { display: none; } }
 
+/* ---------- Margin story: chibi analyst doodles in the side gutters ---------- */
+.story-art {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 150px; opacity: .55; color: var(--text);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.story-art svg { width: 100%; height: auto; }
+.story-art .acc { stroke: var(--accent-2); }
+.story-art .acc-fill { fill: var(--accent-2); }
+.story-cap {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+  color: var(--muted); white-space: nowrap;
+}
+.story-press { left: max(10px, calc(50% - 710px)); top: 200px; }
+.story-surprised { right: max(10px, calc(50% - 710px)); bottom: 300px; }
+.story-happy { right: max(10px, calc(50% - 710px)); top: 50%; transform: translateY(-50%); }
+/* Only when there is real empty gutter space beside the content */
+@media (max-width: 1439px) { .story-art { display: none; } }
+
 /* Status badge: bordered square tag with pulsing marker */
 .status-pill {
   display: inline-flex; margin-bottom: 22px;

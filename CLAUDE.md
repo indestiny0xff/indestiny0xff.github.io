@@ -42,6 +42,9 @@ assets/css/main.css    — entire design system (.browser demo window, .spec-gri
                          .status-pill availability badge with pulsing square marker, motion
                          system with cubic-bezier(.22,1,.36,1) and --stagger reveal delays,
                          .hero-radar background sweep, .contact-box .reticle radar,
+                         .story-art chibi analyst doodles in the side gutters (3 scenes in
+                         index.html: launches a scan, shocked by results, hunt complete;
+                         line color var(--text), shown only at 1440px+ viewports),
                          .scroll-progress hairline, targeting-bracket ghost-button hover,
                          themed scrollbars and :focus-visible rings). The stylesheet is
                          linked with a ?v= cache-buster in default.html: bump it on every

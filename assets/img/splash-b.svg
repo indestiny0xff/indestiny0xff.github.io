@@ -1,30 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <!-- Organic diagonal ink flick in the same palette -->
-  <path fill="#ff2748" opacity=".92" d="M22 210 C54 194 84 168 110 134 C130 108 150 78 172 46 C182 32 192 22 204 14 C196 34 188 52 178 70 C160 104 138 136 112 164 C86 190 56 206 22 210 Z"/>
-  <path fill="#ff2748" opacity=".9" d="M204 14 C214 26 218 40 216 56 C210 42 204 30 196 22 Z"/>
-  <path fill="#ff1fd0" opacity=".82" d="M56 224 C92 210 124 184 150 148 C160 134 168 120 176 104 C170 128 160 150 146 170 C122 202 92 222 56 224 Z"/>
-  <path fill="#8b30ff" opacity=".88" d="M170 40 C180 22 206 20 216 36 C230 42 230 62 216 70 C214 86 194 92 182 82 C168 76 162 62 170 52 C168 48 168 44 170 40 Z"/>
-  <path fill="#8b30ff" opacity=".85" d="M214 68 C226 78 234 90 238 106 C228 94 218 86 206 80 Z"/>
-  <path fill="#ff8fa3" opacity=".9" d="M118 112 C128 100 146 102 150 116 C154 128 142 140 130 134 C120 130 114 122 118 112 Z"/>
-  <path fill="none" stroke="#14e0c0" stroke-width="1.6" stroke-linecap="round" opacity=".75" d="M8 130 C52 100 100 62 164 10"/>
-  <path fill="none" stroke="#ff4d6d" stroke-width="1.3" stroke-linecap="round" opacity=".85" d="M28 226 C80 196 130 152 186 92"/>
-  <circle cx="70" cy="128" r="5" fill="#8b30ff"/>
-  <circle cx="108" cy="88" r="4" fill="#ff2748"/>
-  <circle cx="196" cy="112" r="6" fill="#ff1fd0"/>
-  <circle cx="44" cy="162" r="3.5" fill="#ff8fa3"/>
-  <circle cx="222" cy="132" r="4.5" fill="#2f6bff"/>
-  <circle cx="150" cy="54" r="3" fill="#ff2748"/>
-  <circle cx="180" cy="30" r="2.5" fill="#ff2748"/>
-  <path fill="#ff1fd0" d="M222 176 q7 11 0 16 q-7 -5 0 -16"/>
-  <path fill="#ff2748" d="M36 118 q6 10 0 14 q-6 -4 0 -14"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <!-- Two multicolor spider lilies with loose petals, same palette -->
+  <defs>
+    <path id="p" d="M0 1 C-3.5 -6 -5.5 -17 -1.7 -27.5 C-0.4 -20 -0.5 -9 0 1 Z"/>
+    <g id="st">
+      <path d="M0 0 C-2 -9 -3.5 -20 -1.5 -30.5" fill="none" stroke="#ffffff" stroke-width=".9" stroke-linecap="round" opacity=".9"/>
+      <circle cx="-1.5" cy="-30.5" r="1.2" fill="#ffffff"/>
+    </g>
+  </defs>
+  <path fill="none" stroke="#14e0c0" stroke-width="1.5" stroke-linecap="round" opacity=".7" d="M10 150 C60 110 120 62 200 16"/>
+  <path fill="none" stroke="#ff4d6d" stroke-width="1.2" stroke-linecap="round" opacity=".8" d="M24 206 C80 176 140 132 196 80"/>
+  <g transform="translate(140 88) rotate(-14) scale(2.5)">
+    <path d="M0 1 C-2 8 2 17 0 26" fill="none" stroke="#9f1239" stroke-width="2" stroke-linecap="round"/>
+    <use href="#st" transform="rotate(-68)"/>
+    <use href="#st" transform="rotate(-34)"/>
+    <use href="#st"/>
+    <use href="#st" transform="rotate(34)"/>
+    <use href="#st" transform="rotate(68)"/>
+    <use href="#p" fill="#ff2748" transform="rotate(-85)"/>
+    <use href="#p" fill="#ff1fd0" transform="rotate(-59) translate(0 1) scale(.9) translate(0 -1)"/>
+    <use href="#p" fill="#8b30ff" transform="rotate(-36)"/>
+    <use href="#p" fill="#ff2748" transform="rotate(-13) translate(0 1) scale(.94) translate(0 -1)"/>
+    <use href="#p" fill="#ff8fa3" transform="rotate(11) translate(0 1) scale(.9) translate(0 -1)"/>
+    <use href="#p" fill="#ff1fd0" transform="rotate(34)"/>
+    <use href="#p" fill="#8b30ff" transform="rotate(57) translate(0 1) scale(.94) translate(0 -1)"/>
+    <use href="#p" fill="#ff2748" transform="rotate(83)"/>
+    <use href="#p" fill="#ff5470" transform="rotate(-70) translate(0 1) scale(.6) translate(0 -1)"/>
+    <use href="#p" fill="#ff5ce0" transform="rotate(-35) translate(0 1) scale(.6) translate(0 -1)"/>
+    <use href="#p" fill="#a855f7" transform="translate(0 1) scale(.6) translate(0 -1)"/>
+    <use href="#p" fill="#ff5ce0" transform="rotate(35) translate(0 1) scale(.6) translate(0 -1)"/>
+    <use href="#p" fill="#ff5470" transform="rotate(70) translate(0 1) scale(.6) translate(0 -1)"/>
+    <circle r="1.7" fill="#fff1f2"/>
+  </g>
+  <g transform="translate(56 168) rotate(18) scale(1.6)">
+    <use href="#st" transform="rotate(-40)"/>
+    <use href="#st" transform="rotate(6)"/>
+    <use href="#st" transform="rotate(48)"/>
+    <use href="#p" fill="#ff1fd0" transform="rotate(-70)"/>
+    <use href="#p" fill="#ff2748" transform="rotate(-40)"/>
+    <use href="#p" fill="#8b30ff" transform="rotate(-12)"/>
+    <use href="#p" fill="#ff2748" transform="rotate(16)"/>
+    <use href="#p" fill="#2f6bff" transform="rotate(44)"/>
+    <use href="#p" fill="#ff8fa3" transform="rotate(72)"/>
+    <circle r="1.6" fill="#fff1f2"/>
+  </g>
+  <use href="#p" fill="#ff2748" transform="translate(178 170) rotate(120) scale(1.3)"/>
+  <use href="#p" fill="#ff1fd0" transform="translate(40 60) rotate(-140) scale(1.1)"/>
+  <use href="#p" fill="#8b30ff" transform="translate(108 190) rotate(70) scale(1.2)"/>
+  <circle cx="188" cy="34" r="4" fill="#ff2748"/>
+  <circle cx="26" cy="110" r="3.5" fill="#ff1fd0"/>
+  <circle cx="196" cy="130" r="4" fill="#2f6bff"/>
+  <circle cx="86" cy="36" r="3" fill="#8b30ff"/>
+  <path fill="#ff1fd0" d="M204 190 q7 11 0 16 q-7 -5 0 -16"/>
   <g fill="#ffffff" opacity=".95">
-    <circle cx="178" cy="48" r="2.2"/><circle cx="96" cy="112" r="1.6"/><circle cx="134" cy="80" r="1.4"/>
-    <circle cx="62" cy="150" r="1.8"/><circle cx="156" cy="62" r="1.2"/><circle cx="34" cy="182" r="1.5"/>
-    <circle cx="112" cy="142" r="1.2"/><circle cx="184" cy="98" r="1.4"/><circle cx="206" cy="58" r="1.3"/>
-    <circle cx="84" cy="176" r="1.2"/><circle cx="146" cy="118" r="1"/><circle cx="226" cy="94" r="1.1"/>
+    <circle cx="120" cy="46" r="1.8"/><circle cx="60" cy="90" r="1.4"/><circle cx="170" cy="60" r="1.4"/>
+    <circle cx="34" cy="150" r="1.5"/><circle cx="150" cy="150" r="1.3"/><circle cx="98" cy="120" r="1.2"/>
+    <circle cx="196" cy="102" r="1.2"/><circle cx="70" cy="204" r="1.4"/><circle cx="130" cy="210" r="1.1"/>
   </g>
   <g stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity=".9" fill="none">
-    <path d="M198 148 v8 M194 152 h8"/>
-    <path d="M52 106 v6 M49 109 h6"/>
+    <path d="M182 148 v8 M178 152 h8"/>
+    <path d="M48 40 v6 M45 43 h6"/>
   </g>
 </svg>

@@ -292,7 +292,10 @@ html[data-theme="light"] .hero-lilies .lco { fill: #9f1239; }
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50%      { transform: translateY(14px) rotate(16deg); }
 }
-@media (max-width: 940px) { .hero-lilies { display: none; } }
+/* On small screens the band is enlarged and shifted so the flowers stay a real presence */
+@media (max-width: 940px) {
+  .hero-lilies { width: 160%; left: -30%; top: 56px; opacity: .5; }
+}
 
 /* ---------- Ink splashes: color bursts in the owner's reference palette ---------- */
 section.block > .wrap, .page-head > .wrap { position: relative; z-index: 1; }

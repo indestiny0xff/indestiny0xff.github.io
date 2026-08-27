@@ -1,21 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
-  <!-- Ink splash in the owner's reference palette: red, magenta, violet, blue, white spray, teal wisp -->
-  <path fill="#7c3aed" opacity=".8" d="M60 92 C48 60 84 34 116 44 C138 22 180 40 176 72 C204 84 200 128 170 136 C176 168 138 188 112 170 C84 190 46 168 54 138 C28 126 34 100 60 92 Z"/>
-  <path fill="#d926c9" opacity=".85" d="M92 76 C114 52 160 60 162 94 C186 106 172 144 142 140 C134 164 98 166 88 142 C62 136 66 100 92 76 Z"/>
-  <path fill="#dc2626" opacity=".9" d="M76 96 C88 72 132 70 144 96 C158 112 142 140 118 138 C104 152 78 144 74 124 C66 112 68 104 76 96 Z"/>
-  <path fill="#fb7185" opacity=".85" d="M100 98 C108 84 134 88 136 106 C138 122 114 130 102 118 C94 110 94 104 100 98 Z"/>
-  <path fill="none" stroke="#14b8a6" stroke-width="1.6" stroke-linecap="round" opacity=".7" d="M20 40 C70 24 130 20 196 38"/>
-  <circle cx="28" cy="60" r="5" fill="#dc2626"/>
-  <circle cx="196" cy="52" r="4" fill="#d926c9"/>
-  <circle cx="206" cy="150" r="6" fill="#dc2626"/>
-  <circle cx="44" cy="190" r="4" fill="#7c3aed"/>
-  <circle cx="150" cy="22" r="3.5" fill="#dc2626"/>
-  <circle cx="176" cy="188" r="4.5" fill="#2563eb" opacity=".9"/>
-  <path fill="#d926c9" d="M18 118 q6 10 0 15 q-6 -5 0 -15"/>
-  <g fill="#ffffff" opacity=".92">
-    <circle cx="120" cy="64" r="2.4"/><circle cx="86" cy="148" r="2"/><circle cx="150" cy="120" r="1.6"/>
-    <circle cx="64" cy="72" r="1.2"/><circle cx="182" cy="96" r="1.4"/><circle cx="104" cy="184" r="1.8"/>
-    <circle cx="140" cy="46" r="1.1"/><circle cx="36" cy="116" r="1.2"/><circle cx="160" cy="164" r="1.3"/>
-    <circle cx="94" cy="108" r="1"/><circle cx="126" cy="94" r="1.2"/><circle cx="200" cy="120" r="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">
+  <!-- Chaotic burst in the owner's reference palette: vivid red, hot magenta, violet, blue, white spray -->
+  <path fill="#8b30ff" opacity=".85" d="M120 52 C162 30 214 52 210 96 L246 112 C246 156 210 184 174 172 L166 214 C126 226 92 202 90 168 L46 168 C34 128 58 92 96 88 L94 56 C102 48 112 50 120 52 Z"/>
+  <path fill="#ff1fd0" opacity=".85" d="M150 62 C190 50 228 80 216 118 L244 142 C232 178 192 190 166 172 L148 208 C116 196 104 164 116 134 L80 122 C88 88 118 66 150 62 Z"/>
+  <path fill="#ff2748" opacity=".92" d="M130 22 L142 96 L198 42 L158 112 L242 110 L172 138 L222 198 L150 158 L150 242 L118 160 L50 214 L98 142 L18 140 L92 116 L46 46 L112 100 Z"/>
+  <path fill="#ff8fa3" opacity=".9" d="M108 100 L134 84 L142 112 L170 118 L146 138 L150 168 L124 148 L96 158 L106 130 L88 112 Z"/>
+  <path fill="#2f6bff" opacity=".9" d="M212 56 L236 44 L230 74 L208 72 Z"/>
+  <circle cx="242" cy="86" r="4" fill="#2f6bff"/>
+  <path fill="none" stroke="#14e0c0" stroke-width="1.8" stroke-linecap="round" opacity=".8" d="M14 44 C74 22 150 18 246 40"/>
+  <path fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" opacity=".85" d="M12 206 C80 152 180 144 252 174"/>
+  <path fill="none" stroke="#ff1fd0" stroke-width="1.2" stroke-linecap="round" opacity=".7" d="M30 240 C100 200 190 210 250 236"/>
+  <circle cx="30" cy="70" r="6" fill="#ff2748"/>
+  <circle cx="232" cy="152" r="7" fill="#ff2748"/>
+  <circle cx="52" cy="230" r="5" fill="#ff1fd0"/>
+  <circle cx="176" cy="26" r="4.5" fill="#ff2748"/>
+  <circle cx="24" cy="150" r="4" fill="#8b30ff"/>
+  <circle cx="216" cy="226" r="5" fill="#8b30ff"/>
+  <path fill="#ff1fd0" d="M14 108 q8 12 0 18 q-8 -6 0 -18"/>
+  <path fill="#ff2748" d="M244 196 q7 11 0 16 q-7 -5 0 -16"/>
+  <g fill="#ffffff" opacity=".95">
+    <circle cx="128" cy="62" r="2.8"/><circle cx="88" cy="150" r="2.2"/><circle cx="160" cy="128" r="1.8"/>
+    <circle cx="64" cy="78" r="1.4"/><circle cx="196" cy="98" r="1.6"/><circle cx="110" cy="196" r="2"/>
+    <circle cx="150" cy="48" r="1.3"/><circle cx="38" cy="122" r="1.4"/><circle cx="172" cy="176" r="1.5"/>
+    <circle cx="98" cy="112" r="1.1"/><circle cx="134" cy="96" r="1.4"/><circle cx="210" cy="126" r="1.2"/>
+    <circle cx="76" cy="46" r="1.2"/><circle cx="226" cy="66" r="1.1"/><circle cx="186" cy="216" r="1.6"/>
+    <circle cx="58" cy="188" r="1.3"/><circle cx="140" cy="222" r="1.2"/><circle cx="240" cy="120" r="1"/>
+    <circle cx="16" cy="86" r="1.2"/><circle cx="200" cy="52" r="1"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity=".9" fill="none">
+    <path d="M70 26 v8 M66 30 h8"/>
+    <path d="M228 176 v8 M224 180 h8"/>
+    <path d="M40 106 v6 M37 109 h6"/>
   </g>
 </svg>

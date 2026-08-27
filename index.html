@@ -8,40 +8,55 @@ description: "othmaneb is an R&D engineer in Cyber Threat Intelligence, Malware 
   <!-- Red spider lilies: the brand mark blooming across the top of the hero -->
   <svg class="hero-lilies" viewBox="0 0 1200 600" aria-hidden="true" focusable="false">
     <defs>
-      <linearGradient id="lpg" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0" stop-color="#be123c"/>
-        <stop offset="1" stop-color="#fb7185"/>
+      <linearGradient id="hpo" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#881337"/>
+        <stop offset=".55" stop-color="#be123c"/>
+        <stop offset="1" stop-color="#f43f5e"/>
       </linearGradient>
-      <path id="lpetal" d="M0 1 C-3.5 -6 -5 -17 -1 -24 C2.5 -18 3.5 -7 0 1 Z" fill="url(#lpg)"/>
+      <linearGradient id="hpi" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#be123c"/>
+        <stop offset=".6" stop-color="#e11d48"/>
+        <stop offset="1" stop-color="#fda4af"/>
+      </linearGradient>
+      <path id="lpetal" d="M0 1 C-4.5 -5 -6 -15.5 -2.5 -24 C-1.4 -26.8 1.4 -26.8 0.6 -23.4 C-0.4 -17.5 -0.4 -7 0 1 Z"/>
       <g id="lstam">
-        <path class="lsm" d="M0 0 Q-5 -15 -14 -27"/>
-        <circle class="lan" cx="-14" cy="-27" r="1.4"/>
+        <path class="lsm" d="M0 0 C-1.5 -8 -3 -18 -1 -28"/>
+        <circle class="lan" cx="-1" cy="-28" r="1.2"/>
       </g>
       <g id="lily">
-        <path class="lst" d="M0 1 C-1 10 1 18 0 26"/>
-        <use href="#lstam" transform="rotate(-52)"/>
-        <use href="#lstam" transform="rotate(-26)"/>
+        <path class="lst" d="M0 1 C-2 8 2 17 0 26"/>
+        <use href="#lstam" transform="rotate(-64)"/>
+        <use href="#lstam" transform="rotate(-32)"/>
         <use href="#lstam"/>
-        <use href="#lstam" transform="rotate(26)"/>
-        <use href="#lstam" transform="rotate(52)"/>
-        <use href="#lpetal" transform="rotate(-80)"/>
-        <use href="#lpetal" transform="rotate(-48)"/>
-        <use href="#lpetal" transform="rotate(-16)"/>
-        <use href="#lpetal" transform="rotate(16)"/>
-        <use href="#lpetal" transform="rotate(48)"/>
-        <use href="#lpetal" transform="rotate(80)"/>
-        <circle class="lco" r="2"/>
+        <use href="#lstam" transform="rotate(32)"/>
+        <use href="#lstam" transform="rotate(64)"/>
+        <g fill="url(#hpo)">
+          <use href="#lpetal" transform="rotate(-80)"/>
+          <use href="#lpetal" transform="rotate(-48)"/>
+          <use href="#lpetal" transform="rotate(-16)"/>
+          <use href="#lpetal" transform="rotate(16)"/>
+          <use href="#lpetal" transform="rotate(48)"/>
+          <use href="#lpetal" transform="rotate(80)"/>
+        </g>
+        <g fill="url(#hpi)">
+          <use href="#lpetal" transform="rotate(-64) translate(0 1) scale(.62) translate(0 -1)"/>
+          <use href="#lpetal" transform="rotate(-32) translate(0 1) scale(.62) translate(0 -1)"/>
+          <use href="#lpetal" transform="translate(0 1) scale(.62) translate(0 -1)"/>
+          <use href="#lpetal" transform="rotate(32) translate(0 1) scale(.62) translate(0 -1)"/>
+          <use href="#lpetal" transform="rotate(64) translate(0 1) scale(.62) translate(0 -1)"/>
+        </g>
+        <circle class="lco" r="1.7"/>
       </g>
     </defs>
     <g transform="translate(884 128) rotate(-10) scale(2.2)"><use href="#lily" class="sway s1"/></g>
     <g transform="translate(1110 74) rotate(12) scale(1.4)"><use href="#lily" class="sway s2"/></g>
     <g transform="translate(640 80) rotate(6) scale(1.0)"><use href="#lily" class="sway s3"/></g>
     <g transform="translate(152 78) rotate(-8) scale(0.95)"><use href="#lily" class="sway s4"/></g>
-    <g transform="translate(420 56) rotate(40) scale(1.3)"><use href="#lpetal" class="drift d1"/></g>
-    <g transform="translate(760 40) rotate(-25) scale(1.1)"><use href="#lpetal" class="drift d2"/></g>
-    <g transform="translate(985 170) rotate(70) scale(1.4)"><use href="#lpetal" class="drift d3"/></g>
-    <g transform="translate(300 124) rotate(-60) scale(1.0)"><use href="#lpetal" class="drift d4"/></g>
-    <g transform="translate(1052 24) rotate(15) scale(1.1)"><use href="#lpetal" class="drift d5"/></g>
+    <g transform="translate(420 56) rotate(40) scale(1.3)"><use href="#lpetal" fill="url(#hpo)" class="drift d1"/></g>
+    <g transform="translate(760 40) rotate(-25) scale(1.1)"><use href="#lpetal" fill="url(#hpo)" class="drift d2"/></g>
+    <g transform="translate(985 170) rotate(70) scale(1.4)"><use href="#lpetal" fill="url(#hpo)" class="drift d3"/></g>
+    <g transform="translate(300 124) rotate(-60) scale(1.0)"><use href="#lpetal" fill="url(#hpo)" class="drift d4"/></g>
+    <g transform="translate(1052 24) rotate(15) scale(1.1)"><use href="#lpetal" fill="url(#hpo)" class="drift d5"/></g>
   </svg>
   <div class="wrap hero-grid">
     <div>

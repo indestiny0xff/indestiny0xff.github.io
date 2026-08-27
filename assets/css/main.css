@@ -264,12 +264,13 @@ html[data-theme="light"] .theme-btn .ico-sun { display: none; }
   pointer-events: none; opacity: .5;
 }
 html[data-theme="light"] .hero-lilies { opacity: .55; }
-.hero-lilies .lsm { fill: none; stroke: #fda4af; stroke-width: 1.1; stroke-linecap: round; }
-.hero-lilies .lan { fill: #fecdd3; }
-.hero-lilies .lst { fill: none; stroke: #9f1239; stroke-width: 2.2; stroke-linecap: round; }
-.hero-lilies .lco { fill: #881337; }
+.hero-lilies .lsm { fill: none; stroke: #fecdd3; stroke-width: .9; stroke-linecap: round; }
+.hero-lilies .lan { fill: #fff1f2; }
+.hero-lilies .lst { fill: none; stroke: #9f1239; stroke-width: 2; stroke-linecap: round; }
+.hero-lilies .lco { fill: #fecdd3; }
 html[data-theme="light"] .hero-lilies .lsm { stroke: #be123c; }
 html[data-theme="light"] .hero-lilies .lan { fill: #9f1239; }
+html[data-theme="light"] .hero-lilies .lco { fill: #9f1239; }
 .sway, .drift { transform-box: fill-box; transform-origin: center; }
 .sway { animation: lilySway 7s ease-in-out infinite; }
 .s2 { animation-duration: 8.5s; animation-delay: -3s; }

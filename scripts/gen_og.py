@@ -64,12 +64,30 @@ import math
 
 F = 4.9
 OX, OY = 1020 - 32 * F, 215 - 32 * F
-PETAL = (0xBE, 0x12, 0x3C)
-PETAL_GLOW = (0xFB, 0x71, 0x85)
-STAMEN = (0xFD, 0xA4, 0xAF)
-ANTHER = (0xFE, 0xCD, 0xD3)
+OUTER_BASE = (0x88, 0x13, 0x37)
+OUTER_MID = (0xBE, 0x12, 0x3C)
+OUTER_TIP = (0xF4, 0x3F, 0x5E)
+INNER_BASE = (0xBE, 0x12, 0x3C)
+INNER_MID = (0xE1, 0x1D, 0x48)
+INNER_TIP = (0xFD, 0xA4, 0xAF)
+STAMEN = (0xFE, 0xCD, 0xD3)
+ANTHER = (0xFF, 0xF1, 0xF2)
 STEM = (0x9F, 0x12, 0x39)
-CORE = (0x88, 0x13, 0x37)
+CORE = (0xFE, 0xCD, 0xD3)
+
+
+def scale_about(pts, f, o):
+    return [(o[0] + (x - o[0]) * f, o[1] + (y - o[1]) * f) for x, y in pts]
+
+
+def draw_petal(dd, poly, base_c, mid_c, tip_c):
+    dd.polygon(poly, fill=base_c)
+    cx = sum(p[0] for p in poly) / len(poly)
+    cy = sum(p[1] for p in poly) / len(poly)
+    dd.polygon([(cx + (x - cx) * 0.8, cy + (y - cy) * 0.8) for x, y in poly], fill=mid_c)
+    tip = poly[len(poly) // 2]
+    tx, ty = cx + (tip[0] - cx) * 0.7, cy + (tip[1] - cy) * 0.7
+    dd.polygon([(tx + (x - tx) * 0.45, ty + (y - ty) * 0.45) for x, y in poly], fill=tip_c)
 
 
 def rot(pts, deg, c=(32.0, 32.0)):
@@ -115,25 +133,25 @@ def px(pts, mirror=False):
     return out
 
 
-d.line(px(cubic((32, 33), (31, 44), (33, 54), (32, 64))), fill=STEM, width=round(2.2 * F), joint="curve")
-stamen = quad((32, 32), (27, 17), (18, 5))
-for ang in (-52, -26, 0, 26, 52):
+d.line(px(cubic((32, 33), (30, 42), (34, 52), (32, 64))), fill=STEM, width=round(2 * F), joint="curve")
+stamen = cubic((32, 32), (30.5, 24), (29, 14), (31, 4))
+for ang in (-64, -32, 0, 32, 64):
     pts = rot(stamen, ang)
-    d.line(px(pts), fill=STAMEN, width=round(1.1 * F), joint="curve")
+    d.line(px(pts), fill=STAMEN, width=round(0.9 * F), joint="curve")
     tx, ty = pts[-1]
-    r = 1.3
+    r = 1.2
     d.ellipse([OX + (tx - r) * F, OY + (ty - r) * F, OX + (tx + r) * F, OY + (ty + r) * F], fill=ANTHER)
 petal = (
-    cubic((32, 33), (28.5, 26), (27, 15), (31, 8))
-    + cubic((31, 8), (34.5, 14), (35.5, 25), (32, 33))[1:]
+    cubic((32, 33), (27.5, 27), (26, 16.5), (29.5, 8))
+    + cubic((29.5, 8), (30.6, 5.2), (33.4, 5.2), (32.6, 8.6))[1:]
+    + cubic((32.6, 8.6), (31.6, 14.5), (31.6, 25), (32, 33))[1:]
 )
 for ang in (-80, -48, -16, 16, 48, 80):
-    poly = px(rot(petal, ang))
-    d.polygon(poly, fill=PETAL)
-    cx = sum(p[0] for p in poly) / len(poly)
-    cy = sum(p[1] for p in poly) / len(poly)
-    d.polygon([(cx + (x - cx) * 0.55, cy + (y - cy) * 0.55) for x, y in poly], fill=PETAL_GLOW)
-r = 2
+    draw_petal(d, px(rot(petal, ang)), OUTER_BASE, OUTER_MID, OUTER_TIP)
+inner = scale_about(petal, 0.62, (32.0, 33.0))
+for ang in (-64, -32, 0, 32, 64):
+    draw_petal(d, px(rot(inner, ang)), INNER_BASE, INNER_MID, INNER_TIP)
+r = 1.7
 d.ellipse([OX + (32 - r) * F, OY + (32 - r) * F, OX + (32 + r) * F, OY + (32 + r) * F], fill=CORE)
 
 # text block, left

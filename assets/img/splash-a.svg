@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <!-- Ink splash in the owner's reference palette: red, magenta, violet, blue, white spray, teal wisp -->
+  <path fill="#7c3aed" opacity=".8" d="M60 92 C48 60 84 34 116 44 C138 22 180 40 176 72 C204 84 200 128 170 136 C176 168 138 188 112 170 C84 190 46 168 54 138 C28 126 34 100 60 92 Z"/>
+  <path fill="#d926c9" opacity=".85" d="M92 76 C114 52 160 60 162 94 C186 106 172 144 142 140 C134 164 98 166 88 142 C62 136 66 100 92 76 Z"/>
+  <path fill="#dc2626" opacity=".9" d="M76 96 C88 72 132 70 144 96 C158 112 142 140 118 138 C104 152 78 144 74 124 C66 112 68 104 76 96 Z"/>
+  <path fill="#fb7185" opacity=".85" d="M100 98 C108 84 134 88 136 106 C138 122 114 130 102 118 C94 110 94 104 100 98 Z"/>
+  <path fill="none" stroke="#14b8a6" stroke-width="1.6" stroke-linecap="round" opacity=".7" d="M20 40 C70 24 130 20 196 38"/>
+  <circle cx="28" cy="60" r="5" fill="#dc2626"/>
+  <circle cx="196" cy="52" r="4" fill="#d926c9"/>
+  <circle cx="206" cy="150" r="6" fill="#dc2626"/>
+  <circle cx="44" cy="190" r="4" fill="#7c3aed"/>
+  <circle cx="150" cy="22" r="3.5" fill="#dc2626"/>
+  <circle cx="176" cy="188" r="4.5" fill="#2563eb" opacity=".9"/>
+  <path fill="#d926c9" d="M18 118 q6 10 0 15 q-6 -5 0 -15"/>
+  <g fill="#ffffff" opacity=".92">
+    <circle cx="120" cy="64" r="2.4"/><circle cx="86" cy="148" r="2"/><circle cx="150" cy="120" r="1.6"/>
+    <circle cx="64" cy="72" r="1.2"/><circle cx="182" cy="96" r="1.4"/><circle cx="104" cy="184" r="1.8"/>
+    <circle cx="140" cy="46" r="1.1"/><circle cx="36" cy="116" r="1.2"/><circle cx="160" cy="164" r="1.3"/>
+    <circle cx="94" cy="108" r="1"/><circle cx="126" cy="94" r="1.2"/><circle cx="200" cy="120" r="1"/>
+  </g>
+</svg>

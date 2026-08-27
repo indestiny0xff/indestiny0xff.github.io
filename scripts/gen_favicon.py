@@ -19,10 +19,10 @@ BG_TOP = (0x15, 0x0A, 0x2E)
 BG_BOT = (0x03, 0x05, 0x0A)
 HALO = (0xE1, 0x1D, 0x48)
 OUTER_BASE = (0x88, 0x13, 0x37)
-OUTER_MID = (0xBE, 0x12, 0x3C)
+OUTER_MID = (0xDC, 0x26, 0x26)
 OUTER_TIP = (0xF4, 0x3F, 0x5E)
 INNER_BASE = (0xBE, 0x12, 0x3C)
-INNER_MID = (0xE1, 0x1D, 0x48)
+INNER_MID = (0xEF, 0x44, 0x44)
 INNER_TIP = (0xFD, 0xA4, 0xAF)
 STAMEN = (0xFE, 0xCD, 0xD3, 255)
 ANTHER = (0xFF, 0xF1, 0xF2, 255)
@@ -101,24 +101,23 @@ d = ImageDraw.Draw(img)
 d.line(px(cubic((32, 33), (30, 40), (34, 49), (32, 58))), fill=STEM, width=round(2 * F), joint="curve")
 
 # Stamens: long arcs with glowing anthers (behind the petals)
-stamen = cubic((32, 32), (30.5, 24), (29, 14), (31, 4))
-for ang in (-64, -32, 0, 32, 64):
+stamen = cubic((32, 32), (30, 23), (28.5, 12), (30.5, 1.5))
+for ang in (-68, -34, 0, 34, 68):
     pts = rot(stamen, ang)
     d.line(px(pts), fill=STAMEN, width=round(0.9 * F), joint="curve")
     tx, ty = pts[-1]
     r = 1.2
     d.ellipse([(tx - r) * F, (ty - r) * F, (tx + r) * F, (ty + r) * F], fill=ANTHER)
 
-# Petals: curved, swirling; outer fan of six, inner brighter fan of five
+# Petals: wild spiky fan of eight with varied lengths, inner brighter fan of five
 petal = (
-    cubic((32, 33), (27.5, 27), (26, 16.5), (29.5, 8))
-    + cubic((29.5, 8), (30.6, 5.2), (33.4, 5.2), (32.6, 8.6))[1:]
-    + cubic((32.6, 8.6), (31.6, 14.5), (31.6, 25), (32, 33))[1:]
+    cubic((32, 33), (28.5, 26), (26.5, 15), (30.3, 4.5))
+    + cubic((30.3, 4.5), (31.6, 12), (31.5, 23), (32, 33))[1:]
 )
-for ang in (-80, -48, -16, 16, 48, 80):
-    draw_petal(d, px(rot(petal, ang)), OUTER_BASE, OUTER_MID, OUTER_TIP)
-inner = scale_about(petal, 0.62, PB)
-for ang in (-64, -32, 0, 32, 64):
+for ang, sc in ((-85, 1), (-59, .9), (-36, 1), (-13, .94), (11, .9), (34, 1), (57, .94), (83, 1)):
+    draw_petal(d, px(rot(scale_about(petal, sc, PB), ang)), OUTER_BASE, OUTER_MID, OUTER_TIP)
+inner = scale_about(petal, 0.6, PB)
+for ang in (-70, -35, 0, 35, 70):
     draw_petal(d, px(rot(inner, ang)), INNER_BASE, INNER_MID, INNER_TIP)
 
 # Flower core

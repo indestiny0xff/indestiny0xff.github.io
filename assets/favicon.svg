@@ -5,47 +5,49 @@
       <stop offset="1" stop-color="#03050a"/>
     </linearGradient>
     <radialGradient id="halo">
-      <stop offset="0" stop-color="#e11d48" stop-opacity=".38"/>
+      <stop offset="0" stop-color="#e11d48" stop-opacity=".42"/>
       <stop offset="1" stop-color="#e11d48" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="po" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#881337"/>
-      <stop offset=".55" stop-color="#be123c"/>
+      <stop offset=".5" stop-color="#dc2626"/>
       <stop offset="1" stop-color="#f43f5e"/>
     </linearGradient>
     <linearGradient id="pi" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#be123c"/>
-      <stop offset=".6" stop-color="#e11d48"/>
+      <stop offset=".6" stop-color="#ef4444"/>
       <stop offset="1" stop-color="#fda4af"/>
     </linearGradient>
-    <path id="pet" d="M32 33 C27.5 27 26 16.5 29.5 8 C30.6 5.2 33.4 5.2 32.6 8.6 C31.6 14.5 31.6 25 32 33 Z"/>
+    <path id="pet" d="M32 33 C28.5 26 26.5 15 30.3 4.5 C31.6 12 31.5 23 32 33 Z"/>
     <g id="stam">
-      <path d="M32 32 C30.5 24 29 14 31 4" fill="none" stroke="#fecdd3" stroke-width=".9" stroke-linecap="round"/>
-      <circle cx="31" cy="4" r="1.2" fill="#fff1f2"/>
+      <path d="M32 32 C30 23 28.5 12 30.5 1.5" fill="none" stroke="#fecdd3" stroke-width=".9" stroke-linecap="round"/>
+      <circle cx="30.5" cy="1.5" r="1.2" fill="#fff1f2"/>
     </g>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <circle cx="32" cy="29" r="24" fill="url(#halo)"/>
+  <circle cx="32" cy="28" r="25" fill="url(#halo)"/>
   <path d="M32 33 C30 40 34 49 32 58" fill="none" stroke="#9f1239" stroke-width="2" stroke-linecap="round"/>
-  <use href="#stam" transform="rotate(-64 32 32)"/>
-  <use href="#stam" transform="rotate(-32 32 32)"/>
+  <use href="#stam" transform="rotate(-68 32 32)"/>
+  <use href="#stam" transform="rotate(-34 32 32)"/>
   <use href="#stam"/>
-  <use href="#stam" transform="rotate(32 32 32)"/>
-  <use href="#stam" transform="rotate(64 32 32)"/>
+  <use href="#stam" transform="rotate(34 32 32)"/>
+  <use href="#stam" transform="rotate(68 32 32)"/>
   <g fill="url(#po)">
-    <use href="#pet" transform="rotate(-80 32 32)"/>
-    <use href="#pet" transform="rotate(-48 32 32)"/>
-    <use href="#pet" transform="rotate(-16 32 32)"/>
-    <use href="#pet" transform="rotate(16 32 32)"/>
-    <use href="#pet" transform="rotate(48 32 32)"/>
-    <use href="#pet" transform="rotate(80 32 32)"/>
+    <use href="#pet" transform="rotate(-85 32 32)"/>
+    <use href="#pet" transform="rotate(-59 32 32) translate(32 33) scale(.9) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(-36 32 32)"/>
+    <use href="#pet" transform="rotate(-13 32 32) translate(32 33) scale(.94) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(11 32 32) translate(32 33) scale(.9) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(34 32 32)"/>
+    <use href="#pet" transform="rotate(57 32 32) translate(32 33) scale(.94) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(83 32 32)"/>
   </g>
   <g fill="url(#pi)">
-    <use href="#pet" transform="rotate(-64 32 32) translate(32 33) scale(.62) translate(-32 -33)"/>
-    <use href="#pet" transform="rotate(-32 32 32) translate(32 33) scale(.62) translate(-32 -33)"/>
-    <use href="#pet" transform="translate(32 33) scale(.62) translate(-32 -33)"/>
-    <use href="#pet" transform="rotate(32 32 32) translate(32 33) scale(.62) translate(-32 -33)"/>
-    <use href="#pet" transform="rotate(64 32 32) translate(32 33) scale(.62) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(-70 32 32) translate(32 33) scale(.6) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(-35 32 32) translate(32 33) scale(.6) translate(-32 -33)"/>
+    <use href="#pet" transform="translate(32 33) scale(.6) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(35 32 32) translate(32 33) scale(.6) translate(-32 -33)"/>
+    <use href="#pet" transform="rotate(70 32 32) translate(32 33) scale(.6) translate(-32 -33)"/>
   </g>
   <circle cx="32" cy="32" r="1.7" fill="#fecdd3"/>
 </svg>

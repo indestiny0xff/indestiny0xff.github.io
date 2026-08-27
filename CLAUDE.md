@@ -42,7 +42,14 @@ assets/css/main.css    — entire design system (.browser demo window, .spec-gri
                          .status-pill availability badge with pulsing square marker, motion
                          system with cubic-bezier(.22,1,.36,1) and --stagger reveal delays,
                          .hero-lilies red spider lilies swaying over the hero with drifting
-                         petals (brand mark, crimson tones), .contact-box .reticle radar,
+                         petals (brand mark, wild spiky petals inspired by the owner's Tokyo
+                         Ghoul reference at assets/mixofcolor.png, which is GITIGNORED and
+                         must never be committed or published: it is third-party anime art),
+                         ink-splash section backgrounds via ::before pseudos (.hero, #about,
+                         #projects, #publications, .page-head, .post-wrap) using
+                         assets/img/splash-a.svg and splash-b.svg in the reference palette
+                         (red, magenta, violet, blue, white spray, teal wisp),
+                         .contact-box .reticle radar,
                          .story-art chibi analyst doodles in the side gutters (8 scenes in
                          index.html telling the page's story: waves hello at ~/about,
                          launches the scan and is shocked by results at ~/huntingbadguys,

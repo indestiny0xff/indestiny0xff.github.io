@@ -1,22 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <!-- Diagonal chaos smear in the same palette -->
-  <path fill="#ff2748" opacity=".92" d="M18 210 C56 192 84 166 112 128 L104 158 L142 96 L130 134 L172 62 L158 106 L198 30 L206 22 C196 52 184 76 168 100 L186 88 L150 138 L164 134 L120 176 L130 180 C96 204 58 218 18 210 Z"/>
-  <path fill="#ff1fd0" opacity=".85" d="M52 226 C92 210 126 180 154 140 L146 170 C132 194 108 214 78 226 L86 228 C74 232 62 232 52 226 Z"/>
-  <path fill="#8b30ff" opacity=".9" d="M182 30 L198 8 L206 34 L232 36 L210 52 L216 78 L192 62 L168 72 L178 48 L162 34 Z"/>
-  <path fill="#ff8fa3" opacity=".9" d="M118 108 L134 96 L138 116 L156 124 L138 134 L136 154 L122 138 L102 140 L114 124 Z"/>
+  <!-- Organic diagonal ink flick in the same palette -->
+  <path fill="#ff2748" opacity=".92" d="M22 210 C54 194 84 168 110 134 C130 108 150 78 172 46 C182 32 192 22 204 14 C196 34 188 52 178 70 C160 104 138 136 112 164 C86 190 56 206 22 210 Z"/>
+  <path fill="#ff2748" opacity=".9" d="M204 14 C214 26 218 40 216 56 C210 42 204 30 196 22 Z"/>
+  <path fill="#ff1fd0" opacity=".82" d="M56 224 C92 210 124 184 150 148 C160 134 168 120 176 104 C170 128 160 150 146 170 C122 202 92 222 56 224 Z"/>
+  <path fill="#8b30ff" opacity=".88" d="M170 40 C180 22 206 20 216 36 C230 42 230 62 216 70 C214 86 194 92 182 82 C168 76 162 62 170 52 C168 48 168 44 170 40 Z"/>
+  <path fill="#8b30ff" opacity=".85" d="M214 68 C226 78 234 90 238 106 C228 94 218 86 206 80 Z"/>
+  <path fill="#ff8fa3" opacity=".9" d="M118 112 C128 100 146 102 150 116 C154 128 142 140 130 134 C120 130 114 122 118 112 Z"/>
   <path fill="none" stroke="#14e0c0" stroke-width="1.6" stroke-linecap="round" opacity=".75" d="M8 130 C52 100 100 62 164 10"/>
   <path fill="none" stroke="#ff4d6d" stroke-width="1.3" stroke-linecap="round" opacity=".85" d="M28 226 C80 196 130 152 186 92"/>
   <circle cx="70" cy="128" r="5" fill="#8b30ff"/>
-  <circle cx="110" cy="88" r="4" fill="#ff2748"/>
-  <circle cx="196" cy="110" r="6" fill="#ff1fd0"/>
+  <circle cx="108" cy="88" r="4" fill="#ff2748"/>
+  <circle cx="196" cy="112" r="6" fill="#ff1fd0"/>
   <circle cx="44" cy="162" r="3.5" fill="#ff8fa3"/>
-  <circle cx="222" cy="130" r="4.5" fill="#2f6bff"/>
-  <circle cx="150" cy="52" r="3" fill="#ff2748"/>
+  <circle cx="222" cy="132" r="4.5" fill="#2f6bff"/>
+  <circle cx="150" cy="54" r="3" fill="#ff2748"/>
+  <circle cx="180" cy="30" r="2.5" fill="#ff2748"/>
   <path fill="#ff1fd0" d="M222 176 q7 11 0 16 q-7 -5 0 -16"/>
+  <path fill="#ff2748" d="M36 118 q6 10 0 14 q-6 -4 0 -14"/>
   <g fill="#ffffff" opacity=".95">
-    <circle cx="178" cy="44" r="2.2"/><circle cx="96" cy="112" r="1.6"/><circle cx="134" cy="78" r="1.4"/>
-    <circle cx="62" cy="150" r="1.8"/><circle cx="156" cy="60" r="1.2"/><circle cx="34" cy="182" r="1.5"/>
-    <circle cx="112" cy="142" r="1.2"/><circle cx="184" cy="98" r="1.4"/><circle cx="206" cy="60" r="1.3"/>
+    <circle cx="178" cy="48" r="2.2"/><circle cx="96" cy="112" r="1.6"/><circle cx="134" cy="80" r="1.4"/>
+    <circle cx="62" cy="150" r="1.8"/><circle cx="156" cy="62" r="1.2"/><circle cx="34" cy="182" r="1.5"/>
+    <circle cx="112" cy="142" r="1.2"/><circle cx="184" cy="98" r="1.4"/><circle cx="206" cy="58" r="1.3"/>
     <circle cx="84" cy="176" r="1.2"/><circle cx="146" cy="118" r="1"/><circle cx="226" cy="94" r="1.1"/>
   </g>
   <g stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity=".9" fill="none">

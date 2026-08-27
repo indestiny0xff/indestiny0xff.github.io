@@ -82,7 +82,10 @@ html[data-lang="fr"] .lang-en { display: none !important; }
 /* ---------- Base ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+html {
+  scroll-behavior: smooth; scroll-padding-top: 92px;
+  overflow-x: hidden; overflow-x: clip;
+}
 
 body {
   font-family: var(--font);
@@ -92,7 +95,7 @@ body {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: hidden; overflow-x: clip;
 }
 
 ::selection { background: var(--accent); color: #fff; }
@@ -326,6 +329,14 @@ section.block > .wrap, .page-head > .wrap { position: relative; z-index: 1; }
   background-image: url(../img/splash-b.svg); transform: rotate(24deg); opacity: .26;
 }
 html[data-theme="light"] :is(.hero, #about, #projects, #publications, .page-head, .post-wrap)::before { opacity: .22; }
+/* Sections clip their own splash bleed so phones never widen the viewport */
+section.block, .hero, .post-wrap { overflow-x: clip; }
+@media (max-width: 640px) {
+  .hero::before { left: -24px; bottom: -20px; }
+  #about::before, #publications::before { right: -20px; }
+  #projects::before { left: -24px; }
+  .post-wrap::before { right: -16px; width: 210px; height: 210px; }
+}
 
 /* ---------- Margin story: chibi analyst doodles in the side gutters ---------- */
 .story-art {

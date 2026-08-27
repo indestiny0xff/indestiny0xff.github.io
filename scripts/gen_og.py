@@ -45,7 +45,7 @@ img = img.convert("RGB")
 # purple glow behind the butterfly
 glow = Image.new("RGB", (W, H), (0, 0, 0))
 gd = ImageDraw.Draw(glow)
-gd.ellipse([850, 40, 1190, 390], fill=(0x2A, 0x14, 0x52))
+gd.ellipse([850, 40, 1190, 390], fill=(0x38, 0x0B, 0x1C))
 glow = glow.filter(ImageFilter.GaussianBlur(90))
 img = Image.blend(img, Image.blend(img, glow, 0.0), 0)
 from PIL import ImageChops
@@ -59,9 +59,27 @@ for (cx, cy, sx, sy) in [(IN, IN, 1, 1), (W - IN, IN, -1, 1), (IN, H - IN, 1, -1
     d.line([(cx, cy), (cx + L * sx, cy)], fill=ACCENT, width=WID)
     d.line([(cx, cy), (cx, cy + L * sy)], fill=ACCENT, width=WID)
 
-# butterfly (same 64-unit geometry as the favicon), centered right
+# red spider lily (same 64-unit geometry as the favicon), centered right
+import math
+
 F = 4.9
 OX, OY = 1020 - 32 * F, 215 - 32 * F
+PETAL = (0xBE, 0x12, 0x3C)
+PETAL_GLOW = (0xFB, 0x71, 0x85)
+STAMEN = (0xFD, 0xA4, 0xAF)
+ANTHER = (0xFE, 0xCD, 0xD3)
+STEM = (0x9F, 0x12, 0x39)
+CORE = (0x88, 0x13, 0x37)
+
+
+def rot(pts, deg, c=(32.0, 32.0)):
+    a = math.radians(deg)
+    ca, sa = math.cos(a), math.sin(a)
+    return [
+        (c[0] + (x - c[0]) * ca - (y - c[1]) * sa,
+         c[1] + (x - c[0]) * sa + (y - c[1]) * ca)
+        for x, y in pts
+    ]
 
 
 def cubic(p0, p1, p2, p3, n=48):
@@ -97,26 +115,26 @@ def px(pts, mirror=False):
     return out
 
 
-outline = (
-    cubic((29, 30), (24, 12), (10, 6), (7, 13))
-    + cubic((7, 13), (4, 20), (10, 30), (17, 33))[1:]
-    + cubic((17, 33), (9, 35), (8, 45), (13, 51))[1:]
-    + cubic((13, 51), (18, 56), (27, 50), (29, 38))[1:]
+d.line(px(cubic((32, 33), (31, 44), (33, 54), (32, 64))), fill=STEM, width=round(2.2 * F), joint="curve")
+stamen = quad((32, 32), (27, 17), (18, 5))
+for ang in (-52, -26, 0, 26, 52):
+    pts = rot(stamen, ang)
+    d.line(px(pts), fill=STAMEN, width=round(1.1 * F), joint="curve")
+    tx, ty = pts[-1]
+    r = 1.3
+    d.ellipse([OX + (tx - r) * F, OY + (ty - r) * F, OX + (tx + r) * F, OY + (ty + r) * F], fill=ANTHER)
+petal = (
+    cubic((32, 33), (28.5, 26), (27, 15), (31, 8))
+    + cubic((31, 8), (34.5, 14), (35.5, 25), (32, 33))[1:]
 )
-for mirror in (False, True):
-    wing = px(outline, mirror)
-    d.polygon(wing, fill=ACCENT_DK)
-    cx = sum(p[0] for p in wing) / len(wing)
-    cy = sum(p[1] for p in wing) / len(wing)
-    d.polygon([(cx + (x - cx) * 0.55, cy + (y - cy) * 0.55) for x, y in wing], fill=ACCENT)
-    for (mx, my, r) in [(13, 20, 1.8), (16, 45, 1.4)]:
-        if mirror:
-            mx = 64 - mx
-        d.ellipse([OX + (mx - r) * F, OY + (my - r) * F, OX + (mx + r) * F, OY + (my + r) * F], fill=CYAN)
-d.ellipse([OX + (32 - 2.4) * F, OY + (36 - 10.5) * F, OX + (32 + 2.4) * F, OY + (36 + 10.5) * F], fill=BODY)
-d.ellipse([OX + (32 - 3) * F, OY + (22.5 - 3) * F, OX + (32 + 3) * F, OY + (22.5 + 3) * F], fill=BODY)
-for a in (quad((30.5, 20.5), (27, 13), (22, 11)), quad((33.5, 20.5), (37, 13), (42, 11))):
-    d.line(px(a), fill=BODY, width=round(1.7 * F), joint="curve")
+for ang in (-80, -48, -16, 16, 48, 80):
+    poly = px(rot(petal, ang))
+    d.polygon(poly, fill=PETAL)
+    cx = sum(p[0] for p in poly) / len(poly)
+    cy = sum(p[1] for p in poly) / len(poly)
+    d.polygon([(cx + (x - cx) * 0.55, cy + (y - cy) * 0.55) for x, y in poly], fill=PETAL_GLOW)
+r = 2
+d.ellipse([OX + (32 - r) * F, OY + (32 - r) * F, OX + (32 + r) * F, OY + (32 + r) * F], fill=CORE)
 
 # text block, left
 x = 90

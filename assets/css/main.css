@@ -257,29 +257,38 @@ html[data-theme="light"] .theme-btn .ico-sun { display: none; }
 }
 @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } }
 
-/* ---------- Hero butterflies: the brand mark drifting across the top ---------- */
-.hero-flies {
+/* ---------- Hero red spider lilies: the brand mark across the top ---------- */
+.hero-lilies {
   position: absolute; top: 64px; left: 0; z-index: 0;
   width: 100%; height: auto;
-  pointer-events: none; opacity: .55;
+  pointer-events: none; opacity: .5;
 }
-html[data-theme="light"] .hero-flies { opacity: .6; }
-.hero-flies .bw { fill: var(--accent-soft); stroke: var(--accent-line); stroke-width: 1.3; }
-.hero-flies .bb { fill: var(--accent-2); opacity: .6; }
-.hero-flies .ba { fill: none; stroke: var(--accent-2); stroke-width: 1.3; opacity: .6; stroke-linecap: round; }
-.btrail {
-  fill: none; stroke: var(--accent-line); stroke-width: 1.5;
-  stroke-dasharray: 2 9; stroke-linecap: round; opacity: .7;
+html[data-theme="light"] .hero-lilies { opacity: .55; }
+.hero-lilies .lsm { fill: none; stroke: #fda4af; stroke-width: 1.1; stroke-linecap: round; }
+.hero-lilies .lan { fill: #fecdd3; }
+.hero-lilies .lst { fill: none; stroke: #9f1239; stroke-width: 2.2; stroke-linecap: round; }
+.hero-lilies .lco { fill: #881337; }
+html[data-theme="light"] .hero-lilies .lsm { stroke: #be123c; }
+html[data-theme="light"] .hero-lilies .lan { fill: #9f1239; }
+.sway, .drift { transform-box: fill-box; transform-origin: center; }
+.sway { animation: lilySway 7s ease-in-out infinite; }
+.s2 { animation-duration: 8.5s; animation-delay: -3s; }
+.s3 { animation-duration: 6s; animation-delay: -1.5s; }
+.s4 { animation-duration: 9s; animation-delay: -4.5s; }
+@keyframes lilySway {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(3deg); }
 }
-.fly { animation: flyFloat 6s ease-in-out infinite; }
-.f2 { animation-duration: 7.5s; animation-delay: -2.5s; }
-.f3 { animation-duration: 5.2s; animation-delay: -1.2s; }
-.f4 { animation-duration: 8s; animation-delay: -4s; }
-@keyframes flyFloat {
+.drift { animation: petalDrift 9s ease-in-out infinite; }
+.d2 { animation-duration: 11s; animation-delay: -4s; }
+.d3 { animation-duration: 8s; animation-delay: -2s; }
+.d4 { animation-duration: 12s; animation-delay: -6s; }
+.d5 { animation-duration: 10s; animation-delay: -7s; }
+@keyframes petalDrift {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  50%      { transform: translateY(-4px) rotate(4deg); }
+  50%      { transform: translateY(14px) rotate(16deg); }
 }
-@media (max-width: 940px) { .hero-flies { display: none; } }
+@media (max-width: 940px) { .hero-lilies { display: none; } }
 
 /* ---------- Margin story: chibi analyst doodles in the side gutters ---------- */
 .story-art {
@@ -755,7 +764,7 @@ body, .nav, .surfaced { transition: background-color .4s ease, color .4s ease; }
   .hero-grid > div:first-child > *, .hero-grid > .term { animation: none; }
   html { scroll-behavior: auto; }
   .t-caret, .facade .play,
-  .fly, .rt-sweep { animation: none; }
+  .sway, .drift, .rt-sweep { animation: none; }
 }
 
 /* ============================================================

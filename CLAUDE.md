@@ -73,14 +73,15 @@ assets/favicon.svg     — red spider lily favicon (higanbana, Demon Slayer / To
                          changes). The lily is the brand mark: it also appears in the hero
                          background and assets/og.png
 
+_posts/                — blog posts (markdown, front matter: layout post, title, tags)
+js/highlightjs/        — vendored highlight.js core + 3 language packs
+```
+
 ## HuntingBadGuys hosting
 
 The project is no longer hosted at huntingbadguys.online and there is no embedded demo. Every
 HBG link on the site (Projects card, JSON-LD sameAs, footer, contact buttons) and in the
 generated CVs points at https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC.
-_posts/                — blog posts (markdown, front matter: layout post, title, tags)
-js/highlightjs/        — vendored highlight.js core + 3 language packs
-```
 
 ## Conventions
 

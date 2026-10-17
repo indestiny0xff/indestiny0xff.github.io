@@ -233,7 +233,8 @@ def build_en():
     p.kv("Languages", "Python, C, PowerShell, Bash, x86/x64 assembly")
     p.kv("Reverse engineering", "Ghidra, IDA, x32dbg/x64dbg, Windows/Linux kernel internals")
     p.kv("Detection", "Suricata, YARA, Sigma, KQL")
-    p.kv("CTI & OSINT", "MISP, OpenCTI, Censys, Shodan, Urlscan, VirusTotal, API reverse engineering")
+    p.kv("CTI & OSINT", "MISP, OpenCTI, Intel 471, TRM Labs, Urlscan, VirusTotal, Censys, Shodan, API reverse engineering")
+    p.kv("DFIR & SOC", "Volatility, Autopsy, EZ Tools, Wazuh, Elastic")
     p.kv("Systems & tooling", "Linux, Docker, Git, virtualization")
 
     p.section("Education & Certifications")
@@ -321,9 +322,8 @@ def build_fr():
            "Automatise l'analyse des chaînes d'infection ClickFix à partir d'une URL : analyses statique "
            "et dynamique, exécution en VM, identification du malware, raisonnement LLM avec intégrations MCP.")
     p.proj("CLAAR (projet d'équipe, Oteria).",
-           "Plateforme collaborative de lutte contre la désinformation introduisant les Indicators of "
-           "Disinformation (IODs) ; conception et intégration de l'extension navigateur collectant depuis "
-           "TikTok, Telegram et les sites web via leurs APIs.")
+           "Plateforme collaborative anti-désinformation introduisant les Indicators of Disinformation "
+           "(IODs) ; conception de l'extension navigateur collectant TikTok, Telegram et sites web via leurs APIs.")
     p.proj("Collecte d'intelligence sur Telegram.",
            "Surveillance automatisée de canaux cybercriminels via l'API Telegram, avec extraction d'alias, "
            "de wallets et d'indicateurs d'infrastructure ; présentation « Telegram OSINT 101 » à l'école.")
@@ -342,7 +342,8 @@ def build_fr():
     p.kv("Langages", "Python, C, PowerShell, Bash, assembleur x86/x64")
     p.kv("Reverse engineering", "Ghidra, IDA, x32dbg/x64dbg, internals kernel Windows/Linux")
     p.kv("Détection", "Suricata, YARA, Sigma, KQL")
-    p.kv("CTI & OSINT", "MISP, OpenCTI, Censys, Shodan, Urlscan, VirusTotal, reverse d'API")
+    p.kv("CTI & OSINT", "MISP, OpenCTI, Intel 471, TRM Labs, Urlscan, VirusTotal, Censys, Shodan, reverse d'API")
+    p.kv("DFIR & SOC", "Volatility, Autopsy, EZ Tools, Wazuh, Elastic")
     p.kv("Systèmes & outils", "Linux, Docker, Git, virtualisation")
 
     p.section("Formation & Certifications")

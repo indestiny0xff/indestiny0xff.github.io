@@ -1,4 +1,4 @@
-/* othmaneb : theme, language, nav, motion, hero terminal, embedded HBG demo */
+/* othmaneb : theme, language, nav, motion, hero terminal */
 (function () {
   'use strict';
 
@@ -89,39 +89,6 @@
     revealed.forEach(function (el) { io.observe(el); });
   } else {
     revealed.forEach(function (el) { el.classList.add('vis'); });
-  }
-
-  /* ---------- Embedded HuntingBadGuys demo: load on click ---------- */
-  var facade = document.getElementById('hbgFacade');
-  var frame = document.getElementById('hbgFrame');
-  if (facade && frame) {
-    var note = document.createElement('span');
-    note.className = 'f-load';
-    facade.appendChild(note);
-    facade.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); facade.click(); }
-    });
-    facade.addEventListener('click', function (e) {
-      if (e.target.closest('a')) return;
-      if (facade.classList.contains('loading')) return;
-      facade.classList.add('loading');
-      var fr = root.getAttribute('data-lang') === 'fr';
-      note.textContent = fr ? 'Chargement de la plateforme…' : 'Loading the platform…';
-      frame.addEventListener('load', function () {
-        facade.classList.add('off');
-      }, { once: true });
-      frame.src = frame.getAttribute('data-src');
-      // If the platform refuses to be embedded, guide the user to a new tab.
-      setTimeout(function () {
-        if (!facade.classList.contains('off')) {
-          note.innerHTML = fr
-            ? 'Si la fenêtre reste vide, <a href="' + frame.getAttribute('data-src') +
-              '" target="_blank" rel="noopener" style="color:#a855f7">ouvrez la démo dans un nouvel onglet ↗</a>'
-            : 'If the window stays empty, <a href="' + frame.getAttribute('data-src') +
-              '" target="_blank" rel="noopener" style="color:#a855f7">open the demo in a new tab ↗</a>';
-        }
-      }, 6000);
-    });
   }
 
   /* ---------- Hero terminal typing ---------- */

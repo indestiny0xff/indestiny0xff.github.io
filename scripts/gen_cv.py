@@ -152,7 +152,7 @@ def build_en():
     ])
     p.links_line([
         ("github.com/indestiny0xff", "https://github.com/indestiny0xff", False),
-        ("huntingbadguys.online", "https://huntingbadguys.online", False),
+        ("github.com/indestiny0xff/HuntingBadGuys-PUBLIC", "https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC", False),
         ("x.com/indestiny_cti", "https://x.com/indestiny_cti", False),
     ])
     p.ln(0.8)
@@ -197,7 +197,7 @@ def build_en():
 
     p.section("Projects")
     p.proj("HuntingBadGuys.",
-           "([huntingbadguys.online](https://huntingbadguys.online)) "
+           "([github.com/indestiny0xff/HuntingBadGuys-PUBLIC](https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC)) "
            "Threat infrastructure intelligence platform designed and built end-to-end: 16+ concurrent "
            "collection modules (DNS, WHOIS, HTTP chains, Certificate Transparency, BGP/ASN, GeoIP), a "
            "65-pattern IOC extraction engine, binary analysis (hex, disassembly, decompilation, DIE), an "
@@ -257,7 +257,7 @@ def build_fr():
     ])
     p.links_line([
         ("github.com/indestiny0xff", "https://github.com/indestiny0xff", False),
-        ("huntingbadguys.online", "https://huntingbadguys.online", False),
+        ("github.com/indestiny0xff/HuntingBadGuys-PUBLIC", "https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC", False),
         ("x.com/indestiny_cti", "https://x.com/indestiny_cti", False),
     ])
     p.ln(0.8)
@@ -301,7 +301,7 @@ def build_fr():
 
     p.section("Projets")
     p.proj("HuntingBadGuys.",
-           "([huntingbadguys.online](https://huntingbadguys.online)) "
+           "([github.com/indestiny0xff/HuntingBadGuys-PUBLIC](https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC)) "
            "Plateforme de threat infrastructure intelligence conçue et développée de bout en bout : 16+ "
            "modules de collecte concurrents (DNS, WHOIS, chaînes HTTP, Certificate Transparency, BGP/ASN, "
            "GeoIP), moteur d'extraction d'IOCs à 65 patterns, analyse binaire (hex, désassemblage, "

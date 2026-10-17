@@ -70,7 +70,7 @@ class CV(FPDF):
         self.ln(h)
 
     def section(self, label):
-        self.ln(1.0)
+        self.ln(0.7)
         y = self.get_y()
         self.set_fill_color(*ACCENT)
         self.rect(M, y + 1.3, 2.4, 2.4, "F")
@@ -82,7 +82,7 @@ class CV(FPDF):
         self.set_line_width(0.3)
         y = self.get_y() + 0.4
         self.line(M, y, 210 - M, y)
-        self.ln(1.1)
+        self.ln(0.8)
 
     def para(self, text, size=8.8, color=TEXT, lh=3.7):
         self.set_font("Main", "", size)
@@ -203,6 +203,11 @@ def build_en():
            "65-pattern IOC extraction engine, binary analysis (hex, disassembly, decompilation, DIE), an "
            "AST-based query language, pHash/MinHash clustering, automated feeds (OpenPhish, URLhaus, "
            "ThreatFox) and one-click STIX 2.1 reports.")
+    p.proj("EZ Tools on Linux.",
+           "([github.com/indestiny0xff/Eztoollinux](https://github.com/indestiny0xff/Eztoollinux)) "
+           "Runs Eric Zimmerman's 17 Windows forensic tools natively on Linux (host install or Docker), "
+           "with allez, an orchestrator that locates every artifact on a mounted drive, parses it and loads "
+           "the results into one SQLite database, plus a web UI with searchable tables and a SQL console.")
     p.proj("CLICKFIX Analytics Platform (SEKOIA).",
            "Automates ClickFix infection-chain analysis from a single URL: static and dynamic analysis, "
            "VM execution, malware identification, and LLM reasoning with MCP integrations.")
@@ -283,7 +288,7 @@ def build_fr():
     p.bullet("Conception de règles de détection Suricata et YARA étendant la couverture du produit ; "
              "rédaction de rapports de renseignement sur les acteurs de la menace alimentant priorités de "
              "détection et briefings clients.")
-    p.ln(1.0)
+    p.ln(0.5)
     p.role("Analyste CERT", "OWN Security", "Paris, France | Sept 2023 - Juil 2025")
     p.bullet("Rédaction de rapports techniques sur les campagnes APT et cybercriminelles, utilisés "
              "directement par les clients pour adapter leur posture défensive.")
@@ -293,7 +298,7 @@ def build_fr():
              "avec transformation des résultats en renseignement actionnable.")
     p.bullet("Cartographie de l'infrastructure des groupes cybercriminels en soutien au tracking de long "
              "terme et à l'attribution.")
-    p.ln(1.0)
+    p.ln(0.5)
     p.role("Stagiaire en automatisation sécurité", "ORHUS", "Juil 2023 - Août 2023")
     p.bullet("Audit de sécurité d'un environnement Google Workspace (identités, contrôles d'accès, "
              "configurations) avec développement d'outils Python automatisant audits, contrôles de "
@@ -307,6 +312,11 @@ def build_fr():
            "GeoIP), moteur d'extraction d'IOCs à 65 patterns, analyse binaire (hex, désassemblage, "
            "décompilation, DIE), langage de requête basé AST, clustering pHash/MinHash, feeds automatisés "
            "(OpenPhish, URLhaus, ThreatFox) et rapports STIX 2.1 en un clic.")
+    p.proj("EZ Tools on Linux.",
+           "([github.com/indestiny0xff/Eztoollinux](https://github.com/indestiny0xff/Eztoollinux)) "
+           "Les 17 outils forensiques Windows d'Eric Zimmerman nativement sous Linux (hôte ou Docker), avec "
+           "allez, un orchestrateur qui parse chaque artefact d'un disque monté vers une base SQLite unique, "
+           "et une interface web avec tableaux interrogeables et console SQL.")
     p.proj("CLICKFIX Analytics Platform (SEKOIA).",
            "Automatise l'analyse des chaînes d'infection ClickFix à partir d'une URL : analyses statique "
            "et dynamique, exécution en VM, identification du malware, raisonnement LLM avec intégrations MCP.")

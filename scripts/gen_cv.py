@@ -162,7 +162,7 @@ def build_en():
         "R&D engineer specialized in cyber threat intelligence, malware analysis and detection "
         "engineering, and creator of HuntingBadGuys, a threat infrastructure intelligence platform. "
         "Master's degree in Intelligence & Cyber Threats obtained in 2026. Seeking a technical CTI, "
-        "malware analysis, detection engineering or blue team role from September 2026, in France or abroad."
+        "malware analysis, detection engineering or blue team role, in France or abroad."
     )
 
     p.section("Experience")
@@ -273,7 +273,7 @@ def build_fr():
         "Ingénieur R&D spécialisé en cyber threat intelligence, analyse de malwares et detection "
         "engineering, créateur de HuntingBadGuys, une plateforme de threat infrastructure intelligence. "
         "Mastère Renseignement & Cybermenace obtenu en 2026. Recherche un poste technique en CTI, analyse "
-        "de malwares, detection engineering ou blue team à partir de septembre 2026, en France ou à l'étranger."
+        "de malwares, detection engineering ou blue team, en France ou à l'étranger."
     )
 
     p.section("Expérience professionnelle")

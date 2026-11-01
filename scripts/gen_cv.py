@@ -166,9 +166,9 @@ def build_en():
     )
 
     p.section("Experience")
-    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Oct 2026 - Present")
+    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Sep 2026 - Present")
     p.ln(0.5)
-    p.role("R&D Engineer", "Gatewatcher", "Cyber Campus, Puteaux, France | Sep 2025 - Sep 2026")
+    p.role("R&D Engineer", "Gatewatcher", "Cyber Campus, Puteaux, France | Sep 2025 - Aug 2026")
     p.bullet("Designed a Suricata ruleset enrichment engine powered by LLMs and threat intelligence, "
              "built on an applied LLM study and methodology; it adds context and verdict guidance to "
              "every NDR alert and reduces manual triage effort for SOC analysts.")
@@ -273,9 +273,9 @@ def build_fr():
     )
 
     p.section("Expérience professionnelle")
-    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Oct 2026 - Aujourd'hui")
+    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Sept 2026 - Aujourd'hui")
     p.ln(0.5)
-    p.role("Ingénieur R&D", "Gatewatcher", "Cyber Campus, Puteaux, France | Sept 2025 - Sept 2026")
+    p.role("Ingénieur R&D", "Gatewatcher", "Cyber Campus, Puteaux, France | Sept 2025 - Août 2026")
     p.bullet("Conception d'un moteur d'enrichissement de rulesets Suricata basé sur les LLMs et la threat "
              "intelligence : contexte et aide au verdict sur chaque alerte NDR, moins de triage manuel.")
     p.bullet("Automatisation des rapports de veille sur les vulnérabilités critiques, transformant un "

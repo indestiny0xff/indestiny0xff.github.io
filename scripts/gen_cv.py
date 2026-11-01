@@ -33,7 +33,7 @@ class CV(FPDF):
     def __init__(self):
         super().__init__(format="A4")
         self.set_margins(M, M, M)
-        self.set_auto_page_break(True, margin=12)
+        self.set_auto_page_break(True, margin=10)
         self.add_font("Main", "", FONTS[""])
         self.add_font("Main", "B", FONTS["B"])
         self.add_font("Main", "I", FONTS["I"])
@@ -84,7 +84,7 @@ class CV(FPDF):
         self.line(M, y, 210 - M, y)
         self.ln(0.8)
 
-    def para(self, text, size=8.8, color=TEXT, lh=3.7):
+    def para(self, text, size=8.8, color=TEXT, lh=3.45):
         self.set_font("Main", "", size)
         self.set_text_color(*color)
         self.multi_cell(W, lh, text, new_x="LMARGIN", new_y="NEXT")
@@ -104,37 +104,37 @@ class CV(FPDF):
     def bullet(self, text):
         self.set_font("Main", "", 8.8)
         self.set_text_color(*TEXT)
-        self.cell(4, 3.7, "-")
-        self.multi_cell(W - 4, 3.7, text, new_x="LMARGIN", new_y="NEXT")
+        self.cell(4, 3.45, "-")
+        self.multi_cell(W - 4, 3.45, text, new_x="LMARGIN", new_y="NEXT")
 
     def proj(self, name, desc):
         self.set_font("Main", "", 8.8)
         self.set_text_color(*TEXT)
-        self.multi_cell(W, 3.7, f"**{name}** {desc}", markdown=True,
+        self.multi_cell(W, 3.45, f"**{name}** {desc}", markdown=True,
                         new_x="LMARGIN", new_y="NEXT")
         self.ln(0.5)
 
     def pub(self, title, note, url=None, hot=False):
         self.set_font("Main", "", 8.8)
         self.set_text_color(*TEXT)
-        self.cell(4, 3.7, "-")
+        self.cell(4, 3.45, "-")
         if url:
             self.set_font("Main", "B" if hot else "", 8.8)
             self.set_text_color(*ACCENT)
             tw = self.get_string_width(title) + 1
-            self.cell(tw, 3.7, title, link=url)
+            self.cell(tw, 3.45, title, link=url)
             self.set_font("Main", "", 8.8)
             self.set_text_color(*TEXT)
-            self.multi_cell(W - 4 - tw, 3.7, " " + note, new_x="LMARGIN", new_y="NEXT")
+            self.multi_cell(W - 4 - tw, 3.45, " " + note, new_x="LMARGIN", new_y="NEXT")
         else:
-            self.multi_cell(W - 4, 3.7, f"{title} {note}", new_x="LMARGIN", new_y="NEXT")
+            self.multi_cell(W - 4, 3.45, f"{title} {note}", new_x="LMARGIN", new_y="NEXT")
 
     def kv(self, key, val):
         self.set_font("Main", "B", 8.8)
         self.set_text_color(*TEXT)
-        self.cell(38, 3.9, key)
+        self.cell(38, 3.6, key)
         self.set_font("Main", "", 8.8)
-        self.multi_cell(W - 38, 3.9, val, new_x="LMARGIN", new_y="NEXT")
+        self.multi_cell(W - 38, 3.6, val, new_x="LMARGIN", new_y="NEXT")
 
 
 def build_en():
@@ -142,7 +142,7 @@ def build_en():
     p.add_page()
     p.header_block(
         "OTHMANE B.",
-        "R&D Engineer · Cyber Threat Intelligence · Malware Analysis · Detection Engineering",
+        "Security Analyst · Forensics · Malware Analysis · Detection Engineering",
     )
     p.links_line([
         ("Paris, France", None, False),
@@ -159,41 +159,37 @@ def build_en():
 
     p.section("Summary")
     p.para(
-        "R&D engineer specialized in cyber threat intelligence, malware analysis and detection "
-        "engineering, and creator of HuntingBadGuys, a threat infrastructure intelligence platform. "
-        "Master's degree in Intelligence & Cyber Threats obtained in 2026. Seeking a technical CTI, "
-        "malware analysis, detection engineering or blue team role, in France or abroad."
+        "Security Analyst at BNP Paribas CIB, specialized in forensics, malware analysis, "
+        "detection engineering and blue team operations, and creator of HuntingBadGuys, a threat "
+        "infrastructure intelligence platform. Master's degree in Intelligence & Cyber Threats obtained in 2026, "
+        "after an R&D engineering role at Gatewatcher and a CERT analyst role at OWN Security."
     )
 
     p.section("Experience")
-    p.role("R&D Engineer", "Gatewatcher", "Cyber Campus, Puteaux, France | Sep 2025 - Present")
-    p.bullet("Designed a Suricata ruleset enrichment engine powered by LLMs and threat intelligence; "
-             "it adds context and verdict guidance to every NDR alert and reduces manual triage effort "
-             "for SOC analysts.")
-    p.bullet("Conducted an applied study on LLMs and established a methodology for processing "
-             "information efficiently with consistent, reliable results on business tasks; it now "
-             "underpins the enrichment engine.")
-    p.bullet("Automated the production of vulnerability monitoring reports on critical vulnerabilities, "
-             "turning a multi-hour manual process into a repeatable pipeline delivered to clients.")
+    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Oct 2026 - Present")
+    p.ln(0.5)
+    p.role("R&D Engineer", "Gatewatcher", "Cyber Campus, Puteaux, France | Sep 2025 - Sep 2026")
+    p.bullet("Designed a Suricata ruleset enrichment engine powered by LLMs and threat intelligence, "
+             "built on an applied LLM study and methodology; it adds context and verdict guidance to "
+             "every NDR alert and reduces manual triage effort for SOC analysts.")
+    p.bullet("Automated vulnerability monitoring reports on critical vulnerabilities, turning a "
+             "multi-hour manual process into a repeatable pipeline delivered to clients.")
     p.bullet("Designed Suricata and YARA detection rules extending product coverage of current attacker "
              "tooling; produced threat actor intelligence reports feeding detection priorities and "
              "client briefings.")
-    p.ln(1.0)
+    p.ln(0.5)
     p.role("CERT Analyst", "OWN Security", "Paris, France | Sep 2023 - Jul 2025")
     p.bullet("Drafted technical reports on APT and cybercrime campaigns, used directly by clients to "
              "adapt their defensive posture.")
-    p.bullet("Ran strategic monitoring of ransomware and infostealer ecosystems, providing early "
-             "visibility on emerging groups and tooling.")
+    p.bullet("Ran strategic monitoring of ransomware and infostealer ecosystems and mapped cybercrime "
+             "groups' infrastructure in support of long-term tracking and attribution.")
     p.bullet("Performed malware analysis covering infection chains, obfuscation and encryption methods, "
              "and turned the findings into actionable intelligence.")
-    p.bullet("Mapped cybercrime groups' infrastructure in support of long-term tracking and attribution.")
-    p.ln(1.0)
+    p.ln(0.5)
     p.role("Security Automation Intern", "ORHUS", "Jul 2023 - Aug 2023")
-    p.bullet("Analysed Google Workspace security processes (identity management, access controls, "
-             "configuration baselines) and developed Python tooling automating configuration audits, "
-             "policy enforcement checks and monitoring workflows.")
-    p.bullet("Recommended security posture and architecture improvements focused on risk reduction, "
-             "scalability and operational efficiency.")
+    p.bullet("Audited Google Workspace security processes (identities, access controls, configuration "
+             "baselines), developed Python tooling automating configuration audits and monitoring "
+             "workflows, and recommended security posture improvements.")
 
     p.section("Projects")
     p.proj("HuntingBadGuys.",
@@ -234,7 +230,7 @@ def build_en():
     p.kv("Reverse engineering", "Ghidra, IDA, x32dbg/x64dbg, Windows/Linux kernel internals")
     p.kv("Detection", "Suricata, YARA, Sigma, KQL")
     p.kv("CTI & OSINT", "MISP, OpenCTI, Intel 471, TRM Labs, Urlscan, VirusTotal, Censys, Shodan, API reverse engineering")
-    p.kv("DFIR & SOC", "Volatility, Autopsy, EZ Tools, Wazuh, Elastic")
+    p.kv("DFIR & SOC", "Volatility, Autopsy, EZ Tools, Wazuh, Elastic, log analysis")
     p.kv("Systems & tooling", "Linux, Docker, Git, virtualization")
 
     p.section("Education & Certifications")
@@ -253,7 +249,7 @@ def build_fr():
     p.add_page()
     p.header_block(
         "OTHMANE B.",
-        "Ingénieur R&D · Cyber Threat Intelligence · Analyse de malwares · Detection Engineering",
+        "Security Analyst · Forensic · Analyse de malwares · Detection Engineering",
     )
     p.links_line([
         ("Paris, France", None, False),
@@ -270,63 +266,56 @@ def build_fr():
 
     p.section("Profil")
     p.para(
-        "Ingénieur R&D spécialisé en cyber threat intelligence, analyse de malwares et detection "
-        "engineering, créateur de HuntingBadGuys, une plateforme de threat infrastructure intelligence. "
-        "Mastère Renseignement & Cybermenace obtenu en 2026. Recherche un poste technique en CTI, analyse "
-        "de malwares, detection engineering ou blue team, en France ou à l'étranger."
+        "Security Analyst chez BNP Paribas CIB, spécialisé en forensic, analyse de "
+        "malwares, detection engineering et blue team, créateur de HuntingBadGuys, une plateforme de "
+        "threat infrastructure intelligence. Mastère Renseignement & Cybermenace obtenu en 2026, après des "
+        "expériences chez Gatewatcher et OWN Security."
     )
 
     p.section("Expérience professionnelle")
-    p.role("Ingénieur R&D", "Gatewatcher", "Cyber Campus, Puteaux, France | Sept 2025 - Aujourd'hui")
+    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Oct 2026 - Aujourd'hui")
+    p.ln(0.5)
+    p.role("Ingénieur R&D", "Gatewatcher", "Cyber Campus, Puteaux, France | Sept 2025 - Sept 2026")
     p.bullet("Conception d'un moteur d'enrichissement de rulesets Suricata basé sur les LLMs et la threat "
-             "intelligence ; il ajoute contexte et aide au verdict à chaque alerte NDR et réduit l'effort "
-             "de triage manuel des analystes SOC.")
-    p.bullet("Réalisation d'une étude appliquée sur les LLMs et mise en place d'une méthodologie de "
-             "traitement efficace de l'information produisant des résultats cohérents et fiables sur des "
-             "tâches métier ; elle sous-tend aujourd'hui le moteur d'enrichissement.")
+             "intelligence : contexte et aide au verdict sur chaque alerte NDR, moins de triage manuel.")
     p.bullet("Automatisation des rapports de veille sur les vulnérabilités critiques, transformant un "
              "processus manuel de plusieurs heures en pipeline reproductible livré aux clients.")
-    p.bullet("Conception de règles de détection Suricata et YARA étendant la couverture du produit ; "
-             "rédaction de rapports de renseignement sur les acteurs de la menace alimentant priorités de "
-             "détection et briefings clients.")
+    p.bullet("Conception de règles Suricata et YARA étendant la couverture du produit ; rédaction de "
+             "rapports sur les acteurs de la menace alimentant détection et briefings clients.")
     p.ln(0.5)
     p.role("Analyste CERT", "OWN Security", "Paris, France | Sept 2023 - Juil 2025")
     p.bullet("Rédaction de rapports techniques sur les campagnes APT et cybercriminelles, utilisés "
              "directement par les clients pour adapter leur posture défensive.")
-    p.bullet("Veille stratégique sur les écosystèmes ransomware et infostealer, donnant une visibilité "
-             "précoce sur les groupes et outils émergents.")
+    p.bullet("Veille stratégique sur les écosystèmes ransomware et infostealer et cartographie de "
+             "l'infrastructure des groupes cybercriminels en soutien au tracking et à l'attribution.")
     p.bullet("Analyse technique de malwares : chaînes d'infection, obfuscation et méthodes de chiffrement, "
              "avec transformation des résultats en renseignement actionnable.")
-    p.bullet("Cartographie de l'infrastructure des groupes cybercriminels en soutien au tracking de long "
-             "terme et à l'attribution.")
     p.ln(0.5)
     p.role("Stagiaire en automatisation sécurité", "ORHUS", "Juil 2023 - Août 2023")
-    p.bullet("Audit de sécurité d'un environnement Google Workspace (identités, contrôles d'accès, "
-             "configurations) avec développement d'outils Python automatisant audits, contrôles de "
-             "politiques et supervision, et recommandations d'améliorations de la posture de sécurité.")
+    p.bullet("Audit de sécurité d'un environnement Google Workspace (identités, accès, configurations), "
+             "outils Python automatisant audits et supervision, recommandations de posture de sécurité.")
 
     p.section("Projets")
     p.proj("HuntingBadGuys.",
            "([github.com/indestiny0xff/HuntingBadGuys-PUBLIC](https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC)) "
            "Plateforme de threat infrastructure intelligence conçue et développée de bout en bout : 16+ "
            "modules de collecte concurrents (DNS, WHOIS, chaînes HTTP, Certificate Transparency, BGP/ASN, "
-           "GeoIP), moteur d'extraction d'IOCs à 65 patterns, analyse binaire (hex, désassemblage, "
-           "décompilation, DIE), langage de requête basé AST, clustering pHash/MinHash, feeds automatisés "
-           "(OpenPhish, URLhaus, ThreatFox) et rapports STIX 2.1 en un clic.")
+           "GeoIP), moteur d'extraction d'IOCs à 65 patterns, labo d'analyse binaire, langage de requête "
+           "basé AST, clustering pHash/MinHash, feeds automatisés et rapports STIX 2.1 en un clic.")
     p.proj("EZ Tools on Linux.",
            "([github.com/indestiny0xff/Eztoollinux](https://github.com/indestiny0xff/Eztoollinux)) "
            "Les 17 outils forensiques Windows d'Eric Zimmerman nativement sous Linux (hôte ou Docker), avec "
-           "allez, un orchestrateur qui parse chaque artefact d'un disque monté vers une base SQLite unique, "
-           "et une interface web avec tableaux interrogeables et console SQL.")
+           "un orchestrateur parsant chaque artefact d'un disque monté vers une base SQLite unique et une "
+           "interface web avec console SQL.")
     p.proj("CLICKFIX Analytics Platform (SEKOIA).",
            "Automatise l'analyse des chaînes d'infection ClickFix à partir d'une URL : analyses statique "
            "et dynamique, exécution en VM, identification du malware, raisonnement LLM avec intégrations MCP.")
     p.proj("CLAAR (projet d'équipe, Oteria).",
            "Plateforme collaborative anti-désinformation introduisant les Indicators of Disinformation "
-           "(IODs) ; conception de l'extension navigateur collectant TikTok, Telegram et sites web via leurs APIs.")
+           "(IODs), avec une extension navigateur collectant TikTok, Telegram et sites web via leurs APIs.")
     p.proj("Collecte d'intelligence sur Telegram.",
            "Surveillance automatisée de canaux cybercriminels via l'API Telegram, avec extraction d'alias, "
-           "de wallets et d'indicateurs d'infrastructure ; présentation « Telegram OSINT 101 » à l'école.")
+           "de wallets et d'indicateurs d'infrastructure.")
 
     p.section("Publications & Recherche")
     p.pub("Blog de recherche : indestiny0xff.github.io/blog",
@@ -343,7 +332,7 @@ def build_fr():
     p.kv("Reverse engineering", "Ghidra, IDA, x32dbg/x64dbg, internals kernel Windows/Linux")
     p.kv("Détection", "Suricata, YARA, Sigma, KQL")
     p.kv("CTI & OSINT", "MISP, OpenCTI, Intel 471, TRM Labs, Urlscan, VirusTotal, Censys, Shodan, reverse d'API")
-    p.kv("DFIR & SOC", "Volatility, Autopsy, EZ Tools, Wazuh, Elastic")
+    p.kv("DFIR & SOC", "Volatility, Autopsy, EZ Tools, Wazuh, Elastic, analyse de logs")
     p.kv("Systèmes & outils", "Linux, Docker, Git, virtualisation")
 
     p.section("Formation & Certifications")

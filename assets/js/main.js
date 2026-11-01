@@ -97,7 +97,7 @@
 
   var SCRIPT = [
     { html: '<span class="t-prompt">othmaneb@hbg</span><span class="t-dim">:~$</span> <span class="t-cmd">whoami</span>', type: true },
-    { html: '<span class="t-info">CTI analyst · malware analysis · detection engineering</span>' },
+    { html: '<span class="t-info">security analyst @ BNP Paribas CIB · forensics · malware analysis · detection engineering</span>' },
     { html: '&nbsp;' },
     { html: '<span class="t-prompt">othmaneb@hbg</span><span class="t-dim">:~$</span> <span class="t-cmd">./hunt --target suspicious-domain.tld --full</span>', type: true },
     { html: '<span class="t-ok">[+]</span> DNS <span class="t-ok">✓</span>  WHOIS <span class="t-ok">✓</span>  HTTP chain <span class="t-ok">✓</span>  CT logs <span class="t-ok">✓</span>  BGP/ASN <span class="t-ok">✓</span>' },

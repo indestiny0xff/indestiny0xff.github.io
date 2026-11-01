@@ -1,7 +1,7 @@
 """Generate assets/og.png, the 1200x630 social share image.
 
 Brand: dark background with a faint grid, terminal-style title
-(othmaneb@cti:~$), dim subtitle, purple corner targeting brackets, and
+(othmaneb@dfir:~$), dim subtitle, purple corner targeting brackets, and
 the butterfly from the favicon on the right. Run from the repo root:
 
     python scripts/gen_og.py
@@ -157,8 +157,8 @@ d.ellipse([OX + (32 - r) * F, OY + (32 - r) * F, OX + (32 + r) * F, OY + (32 + r
 x = 90
 d.text((x, 200), "othmaneb", font=title_f, fill=TEXT)
 w = d.textlength("othmaneb", font=title_f)
-d.text((x + w, 200), "@cti:~$", font=title_f, fill=ACCENT)
-d.text((x, 330), "Cyber Threat Intelligence · Malware Analysis", font=sub_f, fill=DIM)
+d.text((x + w, 200), "@dfir:~$", font=title_f, fill=ACCENT)
+d.text((x, 330), "Forensics · Malware Analysis", font=sub_f, fill=DIM)
 d.text((x, 378), "Detection Engineering · HuntingBadGuys", font=sub_f, fill=DIM)
 d.line([(x + 2, 452), (x + 62, 452)], fill=ACCENT, width=4)
 d.text((x, 490), "indestiny0xff.github.io", font=url_f, fill=ACCENT)

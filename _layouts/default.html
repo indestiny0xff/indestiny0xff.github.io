@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.title %}{% assign meta_title = page.title | append: ' · ' | append: site.title %}{% else %}{% assign meta_title = site.title | append: ' · Cyber Threat Intelligence · Malware Analysis · Detection Engineering' %}{% endif %}
+  {% if page.title %}{% assign meta_title = page.title | append: ' · ' | append: site.title %}{% else %}{% assign meta_title = site.title | append: ' · Forensics · Malware Analysis · Detection Engineering' %}{% endif %}
   {% if page.description %}{% assign meta_desc = page.description %}{% elsif page.excerpt %}{% assign meta_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign meta_desc = site.description %}{% endif %}
   <title>{{ meta_title }}</title>
   <meta name="description" content="{{ meta_desc | escape }}">
@@ -17,7 +17,7 @@
   <meta property="og:image" content="{{ '/assets/og.png' | absolute_url }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="othmaneb, Cyber Threat Intelligence, Malware Analysis, Detection Engineering">
+  <meta property="og:image:alt" content="othmaneb, Forensics, Malware Analysis, Detection Engineering">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="fr_FR">
   {% if page.layout == 'post' %}
@@ -62,9 +62,9 @@
         "alternateName": "othmaneb",
         "url": "{{ '/' | absolute_url }}",
         "image": "{{ '/assets/og.png' | absolute_url }}",
-        "jobTitle": "R&D Engineer, Cyber Threat Intelligence",
-        "worksFor": { "@type": "Organization", "name": "Gatewatcher" },
-        "knowsAbout": ["Cyber Threat Intelligence", "Malware Analysis", "Detection Engineering", "Reverse Engineering", "Threat Hunting", "OSINT", "Suricata", "YARA", "MISP"],
+        "jobTitle": "Security Analyst",
+        "worksFor": { "@type": "Organization", "name": "BNP Paribas CIB" },
+        "knowsAbout": ["Forensics", "Malware Analysis", "Detection Engineering", "Blue Team", "Reverse Engineering", "Threat Hunting", "Cyber Threat Intelligence", "OSINT", "Suricata", "YARA", "MISP"],
         "sameAs": ["https://github.com/indestiny0xff", "https://x.com/indestiny_cti", "https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC"]
       },
       {
@@ -107,7 +107,7 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="{{ '/' | relative_url }}">othmaneb<span class="p">@cti</span>:~$</a>
+      <a class="nav-logo" href="{{ '/' | relative_url }}">othmaneb<span class="p">@dfir</span>:~$</a>
       <button class="nav-burger" id="navBurger" aria-label="Menu">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>

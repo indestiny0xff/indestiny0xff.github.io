@@ -86,7 +86,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=20261017a">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=20261112a">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   <script>
     // Apply saved theme/lang before first paint to avoid flash
@@ -102,14 +102,15 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main"><span class="lang-en">Skip to content</span><span class="lang-fr">Aller au contenu</span></a>
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <nav class="nav">
+  <nav class="nav" aria-label="Main">
     <div class="nav-inner">
       <a class="nav-logo" href="{{ '/' | relative_url }}">othmaneb<span class="p">@sec</span>:~$</a>
-      <button class="nav-burger" id="navBurger" aria-label="Menu">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
       </button>
       <div class="nav-links" id="navLinks">
         <div class="nav-item">
@@ -139,7 +140,9 @@
     </div>
   </nav>
 
+  <main id="main" tabindex="-1">
   {{ content }}
+  </main>
 
   <footer class="site-foot">
     <div class="foot-inner">
@@ -153,6 +156,6 @@
     </div>
   </footer>
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}?v=20261112a"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v=20261112b"></script>
 </body>
 </html>

@@ -79,6 +79,22 @@ _posts/                — blog posts (markdown, front matter: layout post, titl
 js/highlightjs/        — vendored highlight.js core + 3 language packs
 ```
 
+## UI behaviour (November 2026 polish pass)
+
+- Navigation: at 1101px and wider the section links sit inline in the bar (the "Portfolio"
+  dropdown is flattened by CSS and its top link hidden, the logo is the home link); between
+  901px and 1100px the dropdown remains; at 900px and below it is an animated burger panel
+  (aria-expanded, closes on Escape, outside click or link click).
+- Projects: HuntingBadGuys spans the full grid width on desktop with a two-column description.
+  main.js folds every other project description to 6 lines behind a bilingual
+  "Read more / Lire la suite" button (all descriptions fold on phones); without JS the full
+  text shows.
+- Theme and language switches cross-fade through the View Transitions API when available.
+- Accessibility: skip link, `<main id="main">` landmark, aria-pressed on the toggles, and the
+  `--muted` text colors meet 4.5:1 in both themes. Keep them at or above that.
+- No Jekyll, Ruby or Node on the owner's machine: to preview locally, render default.html +
+  index.html with a small Python script that strips the Liquid tags.
+
 ## Current role
 
 Since September 2026 the owner is a Security Engineer - CSIRT L3 at BNP Paribas CIB (Paris). The site no longer

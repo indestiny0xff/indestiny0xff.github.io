@@ -276,7 +276,7 @@ def build_fr():
     p.role("Security Engineer - CSIRT L3", "BNP Paribas CIB", "Paris, France | Sept 2026 - Aujourd'hui")
     p.ln(0.5)
     p.role("Ingénieur R&D", "Gatewatcher", "Cyber Campus, Puteaux, France | Sept 2025 - Août 2026")
-    p.bullet("Conception d'un moteur d'enrichissement de rulesets Suricata basé sur les LLMs et la threat "
+    p.bullet("Conception d'un moteur d'enrichissement de rulesets Suricata reposant sur les LLM et la threat "
              "intelligence : contexte et aide au verdict sur chaque alerte NDR, moins de triage manuel.")
     p.bullet("Automatisation des rapports de veille sur les vulnérabilités critiques, transformant un "
              "processus manuel de plusieurs heures en pipeline reproductible livré aux clients.")
@@ -289,7 +289,7 @@ def build_fr():
     p.bullet("Veille stratégique sur les écosystèmes ransomware et infostealer et cartographie de "
              "l'infrastructure des groupes cybercriminels en soutien au tracking et à l'attribution.")
     p.bullet("Analyse technique de malwares : chaînes d'infection, obfuscation et méthodes de chiffrement, "
-             "avec transformation des résultats en renseignement actionnable.")
+             "puis transformation des résultats en renseignement exploitable.")
     p.ln(0.5)
     p.role("Stagiaire en automatisation sécurité", "ORHUS", "Juil 2023 - Août 2023")
     p.bullet("Audit de sécurité d'un environnement Google Workspace (identités, accès, configurations), "
@@ -300,7 +300,7 @@ def build_fr():
            "([github.com/indestiny0xff/HuntingBadGuys-PUBLIC](https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC)) "
            "Plateforme de threat infrastructure intelligence conçue et développée de bout en bout : 16+ "
            "modules de collecte concurrents (DNS, WHOIS, chaînes HTTP, Certificate Transparency, BGP/ASN, "
-           "GeoIP), moteur d'extraction d'IOCs à 65 patterns, labo d'analyse binaire, langage de requête "
+           "GeoIP), moteur d'extraction d'IOC à 65 patterns, labo d'analyse binaire, langage de requête "
            "basé AST, clustering pHash/MinHash, feeds automatisés et rapports STIX 2.1 en un clic.")
     p.proj("EZ Tools on Linux.",
            "([github.com/indestiny0xff/Eztoollinux](https://github.com/indestiny0xff/Eztoollinux)) "

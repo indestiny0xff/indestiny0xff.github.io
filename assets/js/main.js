@@ -5,15 +5,31 @@
   var root = document.documentElement;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function store(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* private mode */ }
+  }
+  // Cross-fade the whole page when the browser supports view transitions
+  function swap(apply) {
+    if (!reduced && document.startViewTransition) document.startViewTransition(apply);
+    else apply();
+  }
+
   /* ---------- Theme toggle ---------- */
   var themeBtn = document.getElementById('themeBtn');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  function syncTheme() {
+    var dark = root.getAttribute('data-theme') !== 'light';
+    if (themeMeta) themeMeta.setAttribute('content', dark ? '#03050a' : '#f5f0e8');
+    if (themeBtn) themeBtn.setAttribute('aria-pressed', String(!dark));
+  }
   if (themeBtn) {
     themeBtn.addEventListener('click', function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      swap(function () { root.setAttribute('data-theme', next); syncTheme(); });
+      store('theme', next);
     });
   }
+  syncTheme();
 
   /* ---------- Language toggle ---------- */
   var btnEn = document.getElementById('langEn');
@@ -21,13 +37,17 @@
   function setLang(lang) {
     root.setAttribute('data-lang', lang);
     root.setAttribute('lang', lang);
-    localStorage.setItem('lang', lang);
-    if (btnEn) btnEn.classList.toggle('on', lang === 'en');
-    if (btnFr) btnFr.classList.toggle('on', lang === 'fr');
+    if (btnEn) { btnEn.classList.toggle('on', lang === 'en'); btnEn.setAttribute('aria-pressed', String(lang === 'en')); }
+    if (btnFr) { btnFr.classList.toggle('on', lang === 'fr'); btnFr.setAttribute('aria-pressed', String(lang === 'fr')); }
+  }
+  function pickLang(lang) {
+    if (root.getAttribute('data-lang') === lang) return;
+    swap(function () { setLang(lang); });
+    store('lang', lang);
   }
   if (btnEn && btnFr) {
-    btnEn.addEventListener('click', function () { setLang('en'); });
-    btnFr.addEventListener('click', function () { setLang('fr'); });
+    btnEn.addEventListener('click', function () { pickLang('en'); });
+    btnFr.addEventListener('click', function () { pickLang('fr'); });
     setLang(root.getAttribute('data-lang') || 'en');
   }
 
@@ -35,24 +55,39 @@
   var nav = document.querySelector('.nav');
   var burger = document.getElementById('navBurger');
   var links = document.getElementById('navLinks');
+  function setMenu(open) {
+    links.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  }
   if (burger && links) {
-    burger.addEventListener('click', function () { links.classList.toggle('open'); });
+    burger.addEventListener('click', function () { setMenu(!links.classList.contains('open')); });
     links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) links.classList.remove('open');
+      if (e.target.closest('a')) setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) { setMenu(false); burger.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !nav.contains(e.target)) setMenu(false);
     });
   }
   if (nav) {
     var prog = document.getElementById('scrollProgress');
-    var onScroll = function () {
+    var ticking = false;
+    var paint = function () {
+      ticking = false;
       nav.classList.toggle('scrolled', window.scrollY > 10);
       if (prog) {
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+        var h = root.scrollHeight - window.innerHeight;
+        prog.style.setProperty('--progress', h > 0 ? Math.min(1, window.scrollY / h) : 0);
       }
+    };
+    var onScroll = function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(paint); }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
-    onScroll();
+    paint();
   }
   // Scrollspy: highlight the nav link of the section in view (home page only)
   var sections = document.querySelectorAll('section.block[id], header.hero');
@@ -66,9 +101,9 @@
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
-        navAnchors.forEach(function (a) { a.classList.remove('active'); });
+        navAnchors.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
         var link = byId[en.target.id];
-        if (link) link.classList.add('active');
+        if (link) { link.classList.add('active'); link.setAttribute('aria-current', 'true'); }
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(function (s) { spy.observe(s); });
@@ -90,6 +125,25 @@
   } else {
     revealed.forEach(function (el) { el.classList.add('vis'); });
   }
+
+  /* ---------- Project cards: fold long descriptions behind "Read more" ---------- */
+  var CHEV = '<svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg>';
+  document.querySelectorAll('.proj > p').forEach(function (p) {
+    p.classList.add('clamp');
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'proj-more';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML =
+      '<span class="more"><span class="lang-en">Read more</span><span class="lang-fr">Lire la suite</span></span>' +
+      '<span class="less"><span class="lang-en">Show less</span><span class="lang-fr">Réduire</span></span>' + CHEV;
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      p.classList.toggle('clamp', !open);
+    });
+    p.insertAdjacentElement('afterend', btn);
+  });
 
   /* ---------- Hero terminal typing ---------- */
   var term = document.getElementById('termBody');

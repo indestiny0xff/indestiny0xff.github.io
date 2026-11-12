@@ -39,7 +39,7 @@ index.html             — the whole portfolio one-pager (bilingual). HuntingBad
 blog/index.html        — post list
 404.html               — themed 404
 assets/css/main.css    — entire design system (.status-pill hero badge with pulsing square marker, showing the
-                         current role "Security Analyst · BNP Paribas CIB" since September 2026, motion
+                         current role "Security Engineer - CSIRT L3 · BNP Paribas CIB" since September 2026, motion
                          system with cubic-bezier(.22,1,.36,1) and --stagger reveal delays,
                          .hero-lilies red spider lilies swaying over the hero with drifting
                          petals (brand mark, wild spiky petals inspired by the owner's Tokyo
@@ -81,14 +81,14 @@ js/highlightjs/        — vendored highlight.js core + 3 language packs
 
 ## Current role
 
-Since September 2026 the owner is a Security Analyst at BNP Paribas CIB (Paris). The site no longer
+Since September 2026 the owner is a Security Engineer - CSIRT L3 at BNP Paribas CIB (Paris). The site no longer
 presents the owner as available or job-seeking: the status pill, hero, about paragraph, quick facts,
 experience timeline, contact pitch, JSON-LD (jobTitle/worksFor), hero terminal and both CVs all
 show the BNP Paribas CIB role, with Gatewatcher closed at August 2026. By owner request the
 BNP entry carries only the title, employer, place and dates: no responsibility bullets, on the
 site or in the CVs. Also by owner request, CTI is no longer the headline specialty anywhere
 (hero, chips, about, quick facts, contact pitch, meta/OG text, JSON-LD, CV titles and summaries):
-the profile is pitched as a technical security analyst specialized in forensics, malware
+the profile is pitched as a technical security engineer (CSIRT L3) specialized in forensics, malware
 analysis, detection engineering and blue team. CTI may still appear as a skill category or in
 past-role descriptions.
 

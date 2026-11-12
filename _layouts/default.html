@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.title %}{% assign meta_title = page.title | append: ' · ' | append: site.title %}{% else %}{% assign meta_title = 'Othmane B. · Security Analyst' %}{% endif %}
+  {% if page.title %}{% assign meta_title = page.title | append: ' · ' | append: site.title %}{% else %}{% assign meta_title = 'Othmane B. · Security Engineer - CSIRT L3' %}{% endif %}
   {% if page.description %}{% assign meta_desc = page.description %}{% elsif page.excerpt %}{% assign meta_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign meta_desc = site.description %}{% endif %}
   <title>{{ meta_title }}</title>
   <meta name="description" content="{{ meta_desc | escape }}">
@@ -62,7 +62,7 @@
         "alternateName": "othmaneb",
         "url": "{{ '/' | absolute_url }}",
         "image": "{{ '/assets/og.png' | absolute_url }}",
-        "jobTitle": "Security Analyst",
+        "jobTitle": "Security Engineer - CSIRT L3",
         "worksFor": { "@type": "Organization", "name": "BNP Paribas CIB" },
         "knowsAbout": ["Forensics", "Malware Analysis", "Detection Engineering", "Blue Team", "Reverse Engineering", "Threat Hunting", "Cyber Threat Intelligence", "OSINT", "Suricata", "YARA", "MISP"],
         "sameAs": ["https://github.com/indestiny0xff", "https://x.com/indestiny_cti", "https://github.com/indestiny0xff/HuntingBadGuys-PUBLIC"]
@@ -153,6 +153,6 @@
     </div>
   </footer>
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}?v=20261101a"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v=20261112a"></script>
 </body>
 </html>

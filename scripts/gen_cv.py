@@ -142,7 +142,7 @@ def build_en():
     p.add_page()
     p.header_block(
         "OTHMANE B.",
-        "Security Analyst · Forensics · Malware Analysis · Detection Engineering",
+        "Security Engineer - CSIRT L3 · Forensics · Malware Analysis · Detection Engineering",
     )
     p.links_line([
         ("Paris, France", None, False),
@@ -159,14 +159,14 @@ def build_en():
 
     p.section("Summary")
     p.para(
-        "Security Analyst at BNP Paribas CIB, specialized in forensics, malware analysis, "
+        "Security Engineer - CSIRT L3 at BNP Paribas CIB, specialized in forensics, malware analysis, "
         "detection engineering and blue team operations, and creator of HuntingBadGuys, a threat "
         "infrastructure intelligence platform. Master's degree in Intelligence & Cyber Threats obtained in 2026, "
         "after an R&D engineering role at Gatewatcher and a CERT analyst role at OWN Security."
     )
 
     p.section("Experience")
-    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Sep 2026 - Present")
+    p.role("Security Engineer - CSIRT L3", "BNP Paribas CIB", "Paris, France | Sep 2026 - Present")
     p.ln(0.5)
     p.role("R&D Engineer", "Gatewatcher", "Cyber Campus, Puteaux, France | Sep 2025 - Aug 2026")
     p.bullet("Designed a Suricata ruleset enrichment engine powered by LLMs and threat intelligence, "
@@ -249,7 +249,7 @@ def build_fr():
     p.add_page()
     p.header_block(
         "OTHMANE B.",
-        "Security Analyst · Forensic · Analyse de malwares · Detection Engineering",
+        "Security Engineer - CSIRT L3 · Forensic · Analyse de malwares · Detection Engineering",
     )
     p.links_line([
         ("Paris, France", None, False),
@@ -266,14 +266,14 @@ def build_fr():
 
     p.section("Profil")
     p.para(
-        "Security Analyst chez BNP Paribas CIB, spécialisé en forensic, analyse de "
+        "Security Engineer - CSIRT L3 chez BNP Paribas CIB, spécialisé en forensic, analyse de "
         "malwares, detection engineering et blue team, créateur de HuntingBadGuys, une plateforme de "
         "threat infrastructure intelligence. Mastère Renseignement & Cybermenace obtenu en 2026, après des "
         "expériences chez Gatewatcher et OWN Security."
     )
 
     p.section("Expérience professionnelle")
-    p.role("Security Analyst", "BNP Paribas CIB", "Paris, France | Sept 2026 - Aujourd'hui")
+    p.role("Security Engineer - CSIRT L3", "BNP Paribas CIB", "Paris, France | Sept 2026 - Aujourd'hui")
     p.ln(0.5)
     p.role("Ingénieur R&D", "Gatewatcher", "Cyber Campus, Puteaux, France | Sept 2025 - Août 2026")
     p.bullet("Conception d'un moteur d'enrichissement de rulesets Suricata basé sur les LLMs et la threat "
